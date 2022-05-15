@@ -12855,7 +12855,7 @@ end)
 --Created using Nexo Animator
     end)
 
-	PaidScriptsSection:NewButton("Fe Samurai", "You will need 5870508493", function()
+	PaidScriptsSection:NewButton("Paid Fe Samurai", "You will need 5870508493", function()
         --[[ Made By 09Ice_Fire09       (!CONVERT!)
 
 
