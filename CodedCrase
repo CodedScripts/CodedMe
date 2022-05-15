@@ -12892,10 +12892,6 @@ ctrl = walk (you run in idle)
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'),true))()
     end)
 
-    PaidScriptsSection:NewButton("Paid Fe Knife", "You need 7170680556 key is Syntaxbesthub", function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn", true))()
-	end)
-
 
     --Player
     local Player = Window:NewTab("Player")
