@@ -125,6 +125,16 @@ elseif game.PlaceId == 4498778926 then
         game.ReplicatedStorage.WearItem:FireServer{"Wear" ,"1235488", "Hats"}
     end)
 
+	MainSection:NewButton("Valk (PERM)", "Gives you the valk", function(v)
+        while true do
+
+			wait(2)
+			
+			Game.ReplicatedStorage.WearItem:FireServer{"Wear", "1365767", "Hats"}
+			
+			end
+    end)
+
     MainSection:NewButton("Fling", "Allows you to fling", function(v)
         loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
     end)
@@ -12947,6 +12957,352 @@ t = clap
 
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Minecart'),true))()
+	end)
+
+    --Gamepasses
+	local GamePass = Window:NewTab("Free Gamepasses")
+    local GamePassSection = GamePass:NewSection("Free Gamepasses")
+
+	GamePassSection:NewButton("Double Seat Carpet", "Allows you to fly like the wind", function(v)
+        local args = {
+			[1] = "TwoSeaterRainbowMagicCarpet",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Balloons", "Gives you balloons", function(v)
+        local args = {
+			[1] = "Balloons",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("BeachBall", "Gives you a Beachball", function(v)
+        local args = {
+			[1] = "BeachBall",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Blue Speedster", "Gives you Blue Speedster", function(v)
+        local args = {
+			[1] = "Blue Speedster",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Candy Cane", "Gives you a Candy Cane", function(v)
+        local args = {
+			[1] = "Candy Cane",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("ClassicBloxyCola", "Gives you a ClassicBloxyCola", function(v)
+        local args = {
+			[1] = "ClassicBloxyCola",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cloud", "Gives you a Cloud", function(v)
+        local args = {
+			[1] = "Cloud",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("CoolCar", "Gives you a CoolCar", function(v)
+        local args = {
+			[1] = "CoolCar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cup Empty", "Gives you a Cup Empty", function(v)
+        local args = {
+			[1] = "Cup (Empty)",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cutlass", "Gives you Cutlass", function(v)
+        local args = {
+			[1] = "Cutlass",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("DiscoHyperbikeWithSideCar", "Gives you a DiscoHyperbike", function(v)
+        local args = {
+			[1] = "DiscoHyperbikeWithSideCar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Donuts", "Gives you Donuts", function(v)
+        local args = {
+			[1] = "Donuts",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("DualGravityCoil", "Gives you DualGravityCoil", function(v)
+        local args = {
+			[1] = "DualGravityCoil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("FidgetSpinner", "Gives you a FidgetSpinner", function(v)
+        local args = {
+			[1] = "FidgetSpinner",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Football", "Gives you a Football", function(v)
+        local args = {
+			[1] = "Football",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Glowdick", "Gives you a Glowdick", function(v)
+        local args = {
+			[1] = "Glowstick",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("GravityCoil", "Gives you a GravityCoil", function(v)
+        local args = {
+			[1] = "GravityCoil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Guitar", "Gives you a Guitar", function(v)
+        local args = {
+			[1] = "Guitar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("HandlessSegway", "Gives you a HandlessSegway", function(v)
+        local args = {
+			[1] = "HandlessSegway",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Homemade Motorcycle", "Gives you a Homemade Motorcycle", function(v)
+        local args = {
+			[1] = "Homemade Motorcycle",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hotdog", "Gives you a Hotdog", function(v)
+        local args = {
+			[1] = "Hotdog",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hoverboard", "Gives you a Hoverboard", function(v)
+        local args = {
+			[1] = "Hoverboard",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hyperbike", "Gives you a Hyperbike", function(v)
+        local args = {
+			[1] = "Hyperbike",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("NeonBloxter", "Gives you a NeonBloxter", function(v)
+        local args = {
+			[1] = "NeonBloxter",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Pirate Gun", "Gives you a Pirate Gun", function(v)
+        local args = {
+			[1] = "Pirate Gun",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("RainbowUnicorn", "Gives you a RainbowUnicorn", function(v)
+        local args = {
+			[1] = "RainbowUnicorn",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Rotorcycle", "Gives you a Rotorcycle", function(v)
+        local args = {
+			[1] = "Rotorcycle",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Selfie Stick", "Gives you a Selfie Stick", function(v)
+        local args = {
+			[1] = "Selfie Stick",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Skateboard", "Gives you a Skateboard", function(v)
+        local args = {
+			[1] = "Skateboard",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Skis", "Gives you a Skis", function(v)
+        local args = {
+			[1] = "Skis",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Speed Coil", "Gives you a Speed Coil", function(v)
+        local args = {
+			[1] = "Speed Coil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("SoccerBall", "Gives you a SoccerBall", function(v)
+        local args = {
+			[1] = "SoccerBall",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("TeddyBloxpin", "Gives you a TeddyBloxpin", function(v)
+        local args = {
+			[1] = "TeddyBloxpin",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Starblox", "Gives you a Starblox", function(v)
+        local args = {
+			[1] = "Starblox",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Donut", "Gives you a Donut", function(v)
+        local args = {
+			[1] = "Donut",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("CottonCandyBucket", "Gives you a CottonCandyBucket", function(v)
+        local args = {
+			[1] = "CottonCandyBucket",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("iPhone 7", "Gives you a iPhone 7", function(v)
+        local args = {
+			[1] = "iPhone 7",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("iPhone 7", "Gives you a iPhone 7", function(v)
+        local args = {
+			[1] = "iPhone 7",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
 	end)
 
     --Player
