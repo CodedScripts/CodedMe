@@ -13296,15 +13296,6 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdas
 		workspace.BuyTools:FireServer(unpack(args))
 	end)
 
-	GamePassSection:NewButton("iPhone 7", "Gives you a iPhone 7", function(v)
-        local args = {
-			[1] = "iPhone 7",
-			[2] = 15
-		}
-		
-		workspace.BuyTools:FireServer(unpack(args))
-	end)
-
     --Player
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
