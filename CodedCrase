@@ -14006,4 +14006,151 @@ end)
 	CreditSection:NewButton("Created by Code#7394","Who its created by", function(v)
         
 	end)
+	
+elseif game.PlaceId == 155615604 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "GrapeTheme")
+
+    -- MAIN
+    local MainStuff = Window:NewTab("MainStuff")
+    local MainStuffSection = MainStuff:NewSection("MainStuff")
+    
+    MainStuffSection:NewButton("Prison Life Admin", "best admin on prison life", function(v)
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+    end)
+    
+    MainStuffSection:NewButton("Give all guns", "Gives you all the guns", function(v)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+    end)
+    
+        MainStuffSection:NewButton("TaserBypass", "Stops you from being tased", function(v)
+            coroutine.wrap(function()
+while task.wait() do
+    local handler = getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs
+    for i,v in next, handler do
+        if i == 'isTazed' and handler[i] == true then
+            handler[i] = false
+            local animations = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+            for i,v in next, animations do
+                if v.Animation.AnimationId == 'rbxassetid://279227693' or v.Animation.AnimationId == 'rbxassetid://279229192' then
+                    v:Stop()
+                end
+            end
+            game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+    end
+end
+end)()
+        end)
+        
+        MainStuffSection:NewButton("Super Punch", "Instant Kills by a punch", function(v)
+        mainRemotes = game.ReplicatedStorage
+meleeRemote = mainRemotes['meleeEvent']
+mouse = game.Players.LocalPlayer:GetMouse()
+punching = false
+cooldown = false
+
+function punch()
+cooldown = true
+local part = Instance.new("Part", game.Players.LocalPlayer.Character)
+part.Transparency = 1
+part.Size = Vector3.new(5, 2, 3)
+part.CanCollide = false
+local w1 = Instance.new("Weld", part)
+w1.Part0 = game.Players.LocalPlayer.Character.Torso
+w1.Part1 = part
+w1.C1 = CFrame.new(0,0,2)
+part.Touched:connect(function(hit)
+if game.Players:FindFirstChild(hit.Parent.Name) then
+local plr = game.Players:FindFirstChild(hit.Parent.Name)
+if plr.Name ~= game.Players.LocalPlayer.Name then
+part:Destroy()
+
+for i = 1,100 do
+meleeRemote:FireServer(plr)
+end
+end
+end
+end)
+
+wait(1)
+cooldown = false
+part:Destroy()
+end
+
+
+mouse.KeyDown:connect(function(key)
+if cooldown == false then
+if key:lower() == "f" then
+
+punch()
+
+end
+end
+end)
+        end)
+
+MainStuffSection:NewButton("Lag Server", "Lags the fuck out of the server", function(v)
+        -- Made By Jake11price --
+-- Crash Server --
+local Gun = "Remington 870"
+
+local Player = game.Players.LocalPlayer.Name
+
+game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Gun].ITEMPICKUP)
+
+for i,v in pairs(game.Players[Player].Backpack:GetChildren()) do
+    if v.name == (Gun) then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+
+Gun = game.Players[Player].Character[Gun]
+
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):UnequipTools()
+
+function FireGun(target)
+coroutine.resume(coroutine.create(function()
+local bulletTable = {}
+table.insert(bulletTable, {
+Hit = target,
+Distance = 100,
+Cframe = CFrame.new(0,1,1),
+RayObject = Ray.new(Vector3.new(0.1,0.2), Vector3.new(0.3,0.4))
+})
+game.ReplicatedStorage.ShootEvent:FireServer(bulletTable, Gun)
+wait()
+end))
+end
+
+while game:GetService("RunService").Stepped:wait() do
+for count = 0, 10, 10 do
+FireGun()
+end
+end
+    end)
+    
+    --player
+     local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+ 
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+ 
+    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+    
+    	--Credits
+    local Creds = Window:NewTab("Credits")
+    local CredSSection = Creds:NewSection("Credits")
+
+	CredSSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
 end
