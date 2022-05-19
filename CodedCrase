@@ -1,6 +1,6 @@
 if game.PlaceId == 417267366 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Dollhouse Roleplay", "Sentinel")
+    local Window = Library.CreateLib("Holocaust Hub", "Synapse")
 
     -- MAIN
     local Main = Window:NewTab("Main")
@@ -597,6 +597,10 @@ con:Disconnect()
 for i,v in pairs(sounds) do
     v:Stop()
 end
+    end)
+    
+    MainSection:NewButton("Boombox on back", "fe puts boombox on your back", function(v)
+        loadstring(game:HttpGet("https://txtpaste.com/raw/e1wO6bMmtt"))()
     end)
 
     -- PLAYER
@@ -17245,4 +17249,2872 @@ RunService:BindToRenderStep(UpdateName, 199, Update);
 	PersonSection:NewButton("Created by Code#7394","Who its created by", function(v)
         
 	end)
+end2.new(0,4,0,1.6)
+b1.StudsOffset = Vector3.new(0,0,0)
+b1.Name = "laff"
+b1.AlwaysOnTop = true
+b1.StudsOffset = Vector3.new(0,2,0)
+b1.Adornee = Head
+removeuseless:AddItem(b1,3)
+local b2 = Instance.new("TextLabel",b1)
+b2.BackgroundTransparency = 1
+b2.Text = "HeHeHeHeHeHeHe..."
+b2.Font = "Garamond"
+b2.TextSize = 30
+b2.Name = "lafftext"
+b2.TextStrokeTransparency = 0
+b2.TextColor3 = BrickColor.new("Grey").Color
+b2.TextStrokeColor3 = Color3.new(0,0,0)
+b2.Size = UDim2.new(1,0,.5,0)
+laff = Instance.new("Sound",Head)
+laff.SoundId = "rbxassetid://2126502539"
+laff.Volume = 5
+laff:Play()
+wait(5)
+laff:Remove()
+tauntdebounce = false
 end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='e' then
+if debounce then return end
+if equip then
+g1:Remove()
+light.Enabled = false
+pcall(function()
+temmy:Remove()
+end)
+for i,v in pairs(tommygun:GetDescendants()) do
+if v.Name == "temmy" then v:Remove()
+end
+end
+light.Enabled = false
+particlemiter1.Enabled = false
+hum.CameraOffset = Vector3.new(0,0,0)
+attacking = false
+equip = false
+shooting = false
+gunallowance = false
+ws = 18
+else
+g1 = Instance.new("BodyGyro", Root)
+g1.D = 175
+g1.P = 20000
+g1.MaxTorque = Vector3.new(0,9000,0)
+g1.CFrame = CFrame.new(Root.Position,mouse.Hit.p)
+attacking = true
+debounce = true
+equip = true
+coroutine.wrap(function()
+while equip do
+g1.CFrame = g1.CFrame:lerp(CFrame.new(Root.Position,mouse.Hit.p),.1)
+ws = 10
+swait()
+if Root.Velocity.y > 1 then
+position = "Jump3"
+elseif Root.Velocity.y < -1 then
+position = "Falling3"
+elseif Root.Velocity.Magnitude > 2 and running == false and attacking == true then
+position = "Walk3"
+elseif Root.Velocity.Magnitude < 2 and running == false and attacking == true then
+position = "Idle4"
+end
+end
+end)()
+coroutine.wrap(function()
+while equip do
+swait()
+settime = 0.05
+sine = sine + change
+if position == "Jump3" and attacking and not running then
+change = .65
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 2, 0) * CFrame.Angles(math.rad(10), math.rad(0), math.rad(0)), 0.4)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.0, .9) * CFrame.Angles(math.rad(20), math.rad(0), math.rad(0)), 0.4)
+elseif position == "Falling3" and attacking and not running then
+change = .65
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 2, 0) * CFrame.Angles(math.rad(8), math.rad(4), math.rad(0)), 0.4)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.0, .9) * CFrame.Angles(math.rad(14), math.rad(-4), math.rad(0)), 0.4)
+elseif position == "Walk3" and attacking == true and running == false then
+change = .65
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0.05*math.sin(sine/4), 0) * CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0)),.2)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 1.92 - 0.35 * math.cos(sine/8)/2.8, 0.2 - math.sin(sine/8)/3.4) * CFrame.Angles(math.rad(10) + -math.sin(sine/8)/2.3, math.rad(0)*math.cos(sine/1), math.rad(0), math.cos(25 * math.cos(sine/8))), 0.1)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.92 + 0.35 * math.cos(sine/8)/2.8, 0.2 + math.sin(sine/8)/3.4) * CFrame.Angles(math.rad(10) - -math.sin(sine/8)/2.3, math.rad(0)*math.cos(sine/1), math.rad(0) , math.cos(25 * math.cos(sine/8))), 0.1)
+elseif position == "Idle4" and attacking == true and running == false then
+change = .65
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, -.2 + -.1 * math.sin(sine/25), 0) * CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0)),.1)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.3, 2 - .1 * math.sin(sine/25), 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(-10)), 0.1)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.1)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.3, 2.0 - .1 * math.sin(sine/25), 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(10)), 0.1)
+end
+end
+end)()
+SOUND(RightArm,898163129,6,false,2)
+for i = 1, 30 do
+tommygunweld.C0 = tommygunweld.C0:lerp(CFrame.new(0,-.68,1.25) * CFrame.Angles(math.rad(90),math.rad(0),math.rad(-12)),.25)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1, 0.1, 0.4) * CFrame.Angles(math.rad(-90), math.rad(-60), math.rad(0)), 0.25)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1, 1.35, 0.4) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 0.25)
+swait()
+end
+gunallowance = true
+mouse.Button1Down:connect(function()
+if gunallowance then
+particlemiter1.Enabled = true
+temmy = Instance.new("Sound",tommygun)
+temmy.SoundId = "rbxassetid://0"
+temmy.Volume = 6
+temmy.Name = "temmy"
+temmy.Looped = true
+temmy:Play()
+shooting = true
+end
+end)
+mouse.Button1Up:connect(function()
+if gunallowance then
+hum.CameraOffset = Vector3.new(0,0,0)
+light.Enabled = false
+particlemiter1.Enabled = false
+pcall(function()
+temmy:Remove()
+end)
+for i,v in pairs(tommygun:GetDescendants()) do
+if v.Name == "temmy" then v:Remove()
+end
+end
+shooting = false
+end
+end)
+coroutine.wrap(function()
+if firsttime2 then return end
+firsttime2 = true
+while true do
+swait(3)
+if shooting then
+if switch1 then
+switch1 = false
+switch2 = true
+light.Enabled = true
+elseif switch2 then
+switch1 = true
+switch2 = false
+light.Enabled = false
+end
+pcall(function()
+if mouse.Target.Parent:FindFirstChildOfClass("Humanoid") then
+DamageFling(mouse.Target.Parent)
+end
+end)
+end
+end
+end)()
+coroutine.wrap(function()
+if firsttime then return end
+firsttime = true
+while true do
+if shooting then
+    pcall(function()
+if mouse.Target.Parent:FindFirstChildOfClass("Humanoid") then
+DamageFling(mouse.Target.Parent)
+end
+end)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1, 1.35, 0.4) * CFrame.Angles(math.rad(-90), math.rad(0 - 10 * math.sin(sine)), math.rad(0)), 0.25)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1, 0.1 + .4 * math.sin(sine), 0.4) * CFrame.Angles(math.rad(-90), math.rad(-60), math.rad(0)), 0.25)
+elseif not shooting then
+end
+swait()
+end
+end)()
+debounce = false
+end
+end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='z' then
+print("Music switched to 1")
+id = 2199374985
+doomtheme.SoundId = "rbxassetid://"..id
+doomtheme:Play()
+end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='v' then
+print("Music switched to 4")
+id = 2111948183
+doomtheme.SoundId = "rbxassetid://"..id
+doomtheme:Play()
+end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='x' then
+print("Music switched to 2")
+id = 318812395
+doomtheme.SoundId = "rbxassetid://"..id
+doomtheme:Play()
+end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='c' then
+print("Music switched to 3")
+id = 180337897
+doomtheme.SoundId = "rbxassetid://"..id
+doomtheme:Play()
+end
+end)
+ 
+mouse.KeyDown:connect(function(Press)
+Press=Press:lower()
+if Press=='b' then
+print("Music switched to 5")
+id = 649148458
+doomtheme.SoundId = "rbxassetid://"..id
+doomtheme:Play()
+end
+end)
+ 
+ 
+checks1 = coroutine.wrap(function() -------Checks
+while true do
+if HumanoidIsDead then break end
+if Root.Velocity.y > 1 then
+position = "Jump"
+elseif Root.Velocity.y < -1 then
+position = "Falling"
+elseif Root.Velocity.Magnitude < 2 then
+position = "Idle"
+elseif Root.Velocity.Magnitude < 20 then
+position = "Walking"
+elseif Root.Velocity.Magnitude > 20 then
+position = "Running"
+else
+end
+wait()
+end
+end)
+checks1()
+ 
+function ray(POSITION, DIRECTION, RANGE, IGNOREDECENDANTS)
+	return workspace:FindPartOnRay(Ray.new(POSITION, DIRECTION.unit * RANGE), IGNOREDECENDANTS)
+end
+ 
+function ray2(StartPos, EndPos, Distance, Ignore)
+local DIRECTION = CFrame.new(StartPos,EndPos).lookVector
+return ray(StartPos, DIRECTION, Distance, Ignore)
+end
+ 
+OrgnC0 = Neck.C0
+local movelimbs = coroutine.wrap(function()
+while RunSrv.RenderStepped:wait() do
+if HumanoidIsDead then break end
+TrsoLV = Torso.CFrame.lookVector
+Dist = nil
+Diff = nil
+if not MseGuide then
+print("Failed to recognize")
+else
+local _, Point = Workspace:FindPartOnRay(Ray.new(Head.CFrame.p, mouse.Hit.lookVector), Workspace, false, true)
+Dist = (Head.CFrame.p-Point).magnitude
+Diff = Head.CFrame.Y-Point.Y
+local _, Point2 = Workspace:FindPartOnRay(Ray.new(LeftArm.CFrame.p, mouse.Hit.lookVector), Workspace, false, true)
+Dist2 = (LeftArm.CFrame.p-Point).magnitude
+Diff2 = LeftArm.CFrame.Y-Point.Y
+HEADLERP.C0 = CFrame.new(0, -1.5, -0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0))
+Neck.C0 = Neck.C0:lerp(OrgnC0*CFrame.Angles((math.tan(Diff/Dist)*1), 0, (((Head.CFrame.p-Point).Unit):Cross(Torso.CFrame.lookVector)).Y*1), .1)
+end
+end
+end)
+movelimbs()
+immortal = {}
+for i,v in pairs(Character:GetDescendants()) do
+	if v:IsA("BasePart") and v.Name ~= "lmagic" and v.Name ~= "rmagic" then
+		if v ~= Root and v ~= Torso and v ~= Head and v ~= RightArm and v ~= LeftArm and v ~= RightLeg and v.Name ~= "lmagic" and v.Name ~= "rmagic" and v ~= LeftLeg then
+			v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+		end
+		table.insert(immortal,{v,v.Parent,v.Material,v.Color,v.Transparency})
+	elseif v:IsA("JointInstance") then
+		table.insert(immortal,{v,v.Parent,nil,nil,nil})
+	end
+end
+for e = 1, #immortal do
+	if immortal[e] ~= nil then
+		local STUFF = immortal[e]
+		local PART = STUFF[1]
+		local PARENT = STUFF[2]
+		local MATERIAL = STUFF[3]
+		local COLOR = STUFF[4]
+		local TRANSPARENCY = STUFF[5]
+if levitate then
+		if PART.ClassName == "Part" and PART ~= Root and PART.Name ~= eyo1 and PART.Name ~= eyo2 and PART.Name ~= "lmagic" and PART.Name ~= "rmagic" then
+			PART.Material = MATERIAL
+			PART.Color = COLOR
+			PART.Transparency = TRANSPARENCY
+		end
+		PART.AncestryChanged:connect(function()
+			PART.Parent = PARENT
+		end)
+else
+		if PART.ClassName == "Part" and PART ~= Root and PART.Name ~= "lmagic" and PART.Name ~= "rmagic" then
+			PART.Material = MATERIAL
+			PART.Color = COLOR
+			PART.Transparency = TRANSPARENCY
+		end
+		PART.AncestryChanged:connect(function()
+			PART.Parent = PARENT
+		end)
+end
+	end
+end
+coroutine.wrap(function()
+while true do
+if HumanoidIsDead then break end
+if hum.Health < .1 then
+deadsound = Instance.new("Sound", Torso)
+deadsound.Volume = 6
+deadsound.SoundId = "rbxassetid://1411352723"
+deadsound:Play()
+end
+wait()
+end
+end)()
+ 
+local anims = coroutine.wrap(function()
+while true do
+if HumanoidIsDead then break end
+settime = 0.05
+sine = sine + change
+if position == "Jump" and attacking == false then
+change = 1
+tommygunweld.C0 = tommygunweld.C0:lerp(CFrame.new(0,-.80,1.25) * CFrame.Angles(math.rad(98),math.rad(0),0),.25)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.1)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.4)
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 0.4)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.4,.1,-.2) * CFrame.Angles(math.rad(20),math.rad(-3),math.rad(-4)), 0.4)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 2, 0) * CFrame.Angles(math.rad(10), math.rad(0), math.rad(0)), 0.4)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.0, .9) * CFrame.Angles(math.rad(20), math.rad(0), math.rad(0)), 0.4)
+elseif position == "Jump2" and attacking == false then
+change = 1
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-20 - 1 * math.sin(sine/9)), math.rad(0 + 0 * math.cos(sine/8)), math.rad(0) + Root.RotVelocity.Y / 30, math.cos(10 * math.cos(sine/10))), 0.3)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.3)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.3)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.5,.6,-.5) * CFrame.Angles(math.rad(32),math.rad(5 - .1 * math.sin(sine/12)),math.rad(40 - .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.5,.6,-.5) * CFrame.Angles(math.rad(30),math.rad(-5 + .1 * math.sin(sine/12)),math.rad(-40 + .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(.2,1.2,-.3),.3)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.54, 1.4 + .1 * math.sin(sine/9), .4) * CFrame.Angles(math.rad(9 + 2 * math.cos(sine/9)), math.rad(0), math.rad(0)), 0.3)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.54, 2.0 + .02 * math.sin(sine/9), 0.2 + .1 * math.sin(sine/9)) * CFrame.Angles(math.rad(25 + 5 * math.sin(sine/9)), math.rad(20), math.rad(0)), 0.3)
+elseif position == "Falling" and attacking == false then
+change = 1
+tommygunweld.C0 = tommygunweld.C0:lerp(CFrame.new(0,-.80,1.25) * CFrame.Angles(math.rad(98),math.rad(0),0),.25)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.1)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.4)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 2, 0) * CFrame.Angles(math.rad(8), math.rad(4), math.rad(0)), 0.2)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.0, .9) * CFrame.Angles(math.rad(14), math.rad(-4), math.rad(0)), 0.2)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.6, 0.5, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(20)), 0.2)
+elseif position == "Falling2" and attacking == false then
+change = 1
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-20 - 1 * math.sin(sine/9)), math.rad(0 + 0 * math.cos(sine/8)), math.rad(0) + Root.RotVelocity.Y / 30, math.cos(10 * math.cos(sine/10))), 0.3)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.3)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.3)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.5,.6,-.5) * CFrame.Angles(math.rad(32),math.rad(5 - .1 * math.sin(sine/12)),math.rad(40 - .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.5,.6,-.5) * CFrame.Angles(math.rad(30),math.rad(-5 + .1 * math.sin(sine/12)),math.rad(-40 + .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(.2,1.2,-.3),.3)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.54, 1.4 + .1 * math.sin(sine/9), .4) * CFrame.Angles(math.rad(9 + 2 * math.cos(sine/9)), math.rad(0), math.rad(0)), 0.3)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.54, 2.0 + .02 * math.sin(sine/9), 0.2 + .1 * math.sin(sine/9)) * CFrame.Angles(math.rad(25 + 5 * math.sin(sine/9)), math.rad(20), math.rad(0)), 0.3)
+elseif position == "Walking" and attacking == false and running == false then
+change = 1.2
+walking = true
+tommygunweld.C0 = tommygunweld.C0:lerp(CFrame.new(0,-.80,1.25) * CFrame.Angles(math.rad(98),math.rad(0),0),.25)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.3,1,0) * CFrame.Angles(math.rad(180),math.rad(1),math.rad(10)), 0.1)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.1)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.5 + Root.RotVelocity.Y / 85,.35,.5*math.sin(sine/8)) * CFrame.Angles(math.rad(-35*math.sin(sine/8)),math.rad(0*math.sin(sine/8)),math.rad(10 + Root.RotVelocity.Y / 10, math.sin(20 * math.sin(sine/4)))),.3)
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0.05*math.sin(sine/4), 0) * CFrame.Angles(math.rad(-10), math.rad(5 * math.cos(sine/7)), math.rad(0) + Root.RotVelocity.Y / 30, math.cos(25 * math.cos(sine/10))), 0.1)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 1.92 - 0.35 * math.cos(sine/8)/2.8, 0.2 - math.sin(sine/8)/3.4) * CFrame.Angles(math.rad(10) + -math.sin(sine/8)/2.3, math.rad(0)*math.cos(sine/1), math.rad(0), math.cos(25 * math.cos(sine/8))), 0.3)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.92 + 0.35 * math.cos(sine/8)/2.8, 0.2 + math.sin(sine/8)/3.4) * CFrame.Angles(math.rad(10) - -math.sin(sine/8)/2.3, math.rad(0)*math.cos(sine/1), math.rad(0) , math.cos(25 * math.cos(sine/8))), 0.3)
+elseif position == "Idle" and attacking == false and running == false then
+change = .5
+tommygunweld.C0 = tommygunweld.C0:lerp(CFrame.new(0,-.80,1.25) * CFrame.Angles(math.rad(98),math.rad(0),0),.25)
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, -.2 + -.1 * math.sin(sine/12), 0) * CFrame.Angles(math.rad(0),math.rad(25),math.rad(0)),.1)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.3 + .1 * math.sin(sine/12),1 + .1 * math.sin(sine/12),0) * CFrame.Angles(math.rad(180),math.rad(1),math.rad(8 + 5 * math.sin(sine/12))), 0.1)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.59 - .05 * math.sin(sine/12), 0.1 -.1 * math.sin(sine/12), 0) * CFrame.Angles(math.rad(-2), math.rad(2), math.rad(8  - 6 * math.sin(sine/12))), .2)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.3, 2 - .1 * math.sin(sine/12), 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(-10)), 0.1)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.1)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.3, 2.0 - .1 * math.sin(sine/12), 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(10)), 0.1)
+elseif position == "Idle2" and attacking == false and running == false then
+change = .75
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0 - 3 * math.sin(sine/9)),0,0),.1)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.1)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(-.2,.2,0) * CFrame.Angles(0,0,0),.1)
+LEFTARMLERP.C1 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.6, 0.8 - .1 * math.sin(sine/9), 0) * CFrame.Angles(math.rad(0), math.rad(0 + 3 * math.sin(sine/9)), math.rad(35 - 5 * math.sin(sine/9))), 0.4)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.6, 0.8 - .1 * math.sin(sine/9), 0) * CFrame.Angles(math.rad(0), math.rad(0 - 3 * math.sin(sine/9)), math.rad(-35 + 5 * math.sin(sine/9))), 0.4)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.54, 1.4 + .1 * math.sin(sine/9), .4) * CFrame.Angles(math.rad(9 + 2 * math.cos(sine/9)), math.rad(0), math.rad(0)), 0.4)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 2.0,0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(-10 + 2 * math.sin(sine/9))), 0.4)
+elseif position == "Walking2" and attacking == false and running == false then
+ws = 50
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-20 - 1 * math.sin(sine/9)), math.rad(0 + 0 * math.cos(sine/8)), math.rad(0) + Root.RotVelocity.Y / 30, math.cos(10 * math.cos(sine/10))), 0.3)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(0,0,0),.3)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),0,0),.3)
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(-1.5,.6,-.5) * CFrame.Angles(math.rad(32),math.rad(5 - .1 * math.sin(sine/12)),math.rad(40 - .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(1.5,.6,-.5) * CFrame.Angles(math.rad(30),math.rad(-5 + .1 * math.sin(sine/12)),math.rad(-40 + .5 * math.sin(sine/12))), 0.3)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(.2,1.2,-.3),.3)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.54, 1.4 + .1 * math.sin(sine/9), .4) * CFrame.Angles(math.rad(9 + 2 * math.cos(sine/9)), math.rad(0), math.rad(0)), 0.3)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.54, 2.0 + .02 * math.sin(sine/9), 0.2 + .1 * math.sin(sine/9)) * CFrame.Angles(math.rad(25 + 5 * math.sin(sine/9)), math.rad(20), math.rad(0)), 0.3)
+elseif position == "Running" and attacking == false then
+change = 1
+RIGHTARMLERP.C0 = RIGHTARMLERP.C0:lerp(CFrame.new(0, .5, 0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)), 0.3)
+LEFTARMLERP.C1 = LEFTARMLERP.C1:lerp(CFrame.new(-1.24+.6*math.sin(sine/4)/1.4, 0.54, 0-0.8*math.sin(sine/4))*CFrame.Angles(math.rad(6+140*math.sin(sine/4)/1.2), math.rad(0), math.rad(20+70*math.sin(sine/4))), 0.3)
+LEFTARMLERP.C0 = LEFTARMLERP.C0:lerp(CFrame.new(0,.5,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),.3)
+ROOTLERP.C0 = ROOTLERP.C0:lerp(CFrame.new(0, -.2, 0) * CFrame.Angles(math.rad(-20 - 0 * math.sin(sine/4)), math.rad(0 + 6 * math.sin(sine/4)), math.rad(0) + Root.RotVelocity.Y / 30, math.sin(10 * math.sin(sine/4))), 0.3)
+RIGHTLEGLERP.C1 = RIGHTLEGLERP.C1:lerp(CFrame.new(0,0,-.2 + .5*-math.sin(sine/4)),.3)
+RIGHTLEGLERP.C0 = RIGHTLEGLERP.C0:lerp(CFrame.new(-0.5, 1.6+0.1*math.sin(sine/4),.7*-math.sin(sine/4)) * CFrame.Angles(math.rad(15+ -50 * math.sin(sine/4)),0,0),.3)
+LEFTLEGLERP.C1 = LEFTLEGLERP.C1:lerp(CFrame.new(0,0,-.2 + .5*math.sin(sine/4)),.3)
+LEFTLEGLERP.C0 = LEFTLEGLERP.C0:lerp(CFrame.new(0.5, 1.6-0.1*math.sin(sine/4),.7*math.sin(sine/4)) * CFrame.Angles(math.rad(15 + 50 * math.sin(sine/4)),0,0),.3)
+end
+swait()
+end
+end)
+anims()
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Edit",Text = "kezmme#0001",Duration = 12})
+    end)
+
+	PaidScriptsSection:NewButton("Paid Fe One punch man", "You will need 6470135113", function()
+        print('Saitama Made by mugaga#2801')
+--Saitama
+--Made by mugaga#2801
+--For The Script To Execute You Need:
+--https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW
+--R - Main Idle
+--E - Barrage
+--Click - Punch
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(0,35,0)
+wait(0.5)
+end)
+end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "Notification";
+	Text = "Netless activated";
+	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 16;
+local HatChar = game.Players.LocalPlayer.Character
+local Hat = HatChar:FindFirstChild("WDW_FoamFinger")
+
+Hat.Handle.SpecialMesh:Destroy()
+
+
+
+
+HumanDied = false
+local reanim
+function noplsmesh(hat)
+_G.OldCF=workspace.Camera.CFrame
+oldchar=game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character=workspace[game.Players.LocalPlayer.Name]
+for i,v in next, workspace[game.Players.LocalPlayer.Name][hat]:GetDescendants() do
+if v:IsA('Mesh') or v:IsA('SpecialMesh') then
+v:Remove()
+end
+end
+game.Players.LocalPlayer.Character=oldchar
+wait()
+workspace.Camera.CFrame=_G.OldCF
+game.Players.LocalPlayer.Character=oldchar
+end
+_G.ClickFling=false -- Set this to true if u want.
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/OofHead-FE/nexo-before-deleted/main/NexoPD'),true))()
+
+IT = Instance.new
+CF = CFrame.new
+VT = Vector3.new
+RAD = math.rad
+C3 = Color3.new
+UD2 = UDim2.new
+BRICKC = BrickColor.new
+ANGLES = CFrame.Angles
+EULER = CFrame.fromEulerAnglesXYZ
+COS = math.cos
+ACOS = math.acos
+SIN = math.sin
+ASIN = math.asin
+ABS = math.abs
+MRANDOM = math.random
+FLOOR = math.floor
+
+speed = 1
+sine = 1
+srv = game:GetService('RunService')
+
+function hatset(yes,part,c1,c0,nm)
+reanim[yes].Handle.AccessoryWeld.Part1=reanim[part]
+reanim[yes].Handle.AccessoryWeld.C1=c1 or CFrame.new()
+reanim[yes].Handle.AccessoryWeld.C0=c0 or CFrame.new()--3bbb322dad5929d0d4f25adcebf30aa5
+if nm==true then
+noplsmesh(yes)
+end
+end
+
+--put the hat script converted below
+
+reanim = game.Players.LocalPlayer.Character.CWExtra.NexoPD
+RJ = reanim.HumanoidRootPart.RootJoint
+RS = reanim.Torso['Right Shoulder']
+LS = reanim.Torso['Left Shoulder']
+RH = reanim.Torso['Right Hip']
+LH = reanim.Torso['Left Hip']
+Root = reanim.HumanoidRootPart
+NECK = reanim.Torso.Neck
+NECK.C0 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+NECK.C1 = CF(0,-0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C1 = CF(-0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C1 = CF(0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+
+Mode='1'
+
+mousechanger=game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+if k == 'r' then-- first mode
+Mode='1'
+elseif k == 'e' then-- second mode
+Mode='2'
+elseif k == 'urkeybind' then-- third mode
+Mode='3'
+end
+end)
+
+
+
+attacklol=game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+Mode='Attack0'
+wait(1) -- Time Of Attack
+Mode='Attack1'
+end)
+
+
+
+coroutine.wrap(function()
+while true do -- anim changer
+if HumanDied then mousechanger:Disconnect() break end
+sine = sine + speed
+local rlegray = Ray.new(reanim["Right Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local rlegpart, rlegendPoint = workspace:FindPartOnRay(rlegray, char)
+local llegray = Ray.new(reanim["Left Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local llegpart, llegendPoint = workspace:FindPartOnRay(llegray, char)
+local rightvector = (Root.Velocity * Root.CFrame.rightVector).X + (Root.Velocity * Root.CFrame.rightVector).Z
+local lookvector = (Root.Velocity * Root.CFrame.lookVector).X + (Root.Velocity * Root.CFrame.lookVector).Z
+if lookvector > reanim.Humanoid.WalkSpeed then
+lookvector = reanim.Humanoid.WalkSpeed
+end
+if lookvector < -reanim.Humanoid.WalkSpeed then
+lookvector = -reanim.Humanoid.WalkSpeed
+end
+if rightvector > reanim.Humanoid.WalkSpeed then
+rightvector = reanim.Humanoid.WalkSpeed
+end
+if rightvector < -reanim.Humanoid.WalkSpeed then
+rightvector = -reanim.Humanoid.WalkSpeed
+end
+local lookvel = lookvector / reanim.Humanoid.WalkSpeed
+local rightvel = rightvector / reanim.Humanoid.WalkSpeed
+if Mode == '1' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.2*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10.4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(-33+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+0*math.cos(sine/13),-0.3+0*math.cos(sine/13))*ANGLES(RAD(0+3*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.2*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+-10.4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+-30*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+20*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+0*math.cos(sine/13),-0.4+0*math.cos(sine/13))*ANGLES(RAD(34+15*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == '2' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),-0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-37+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(0+3*math.cos(sine/1),1+-2*math.cos(sine/1),0+8*math.cos(sine/1))*ANGLES(RAD(130+10*math.cos(sine/1)),RAD(32+0*math.cos(sine/1)),RAD(-26+0*math.cos(sine/1))),.3)
+LS.C0 = LS.C0:Lerp(CF(0+5*math.cos(sine/1),0.5+4*math.cos(sine/1),0+-7*math.cos(sine/1))*ANGLES(RAD(94+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),0+-0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(1+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.5+0*math.cos(sine/2),-0.6+0*math.cos(sine/2))*ANGLES(RAD(36+15*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),-0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-37+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(0+3*math.cos(sine/1),1+-2*math.cos(sine/1),0+8*math.cos(sine/1))*ANGLES(RAD(130+10*math.cos(sine/1)),RAD(32+0*math.cos(sine/1)),RAD(-26+0*math.cos(sine/1))),.3)
+LS.C0 = LS.C0:Lerp(CF(0+5*math.cos(sine/1),0.5+4*math.cos(sine/1),0+-7*math.cos(sine/1))*ANGLES(RAD(94+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),0+-0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(1+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.5+0*math.cos(sine/2),-0.6+0*math.cos(sine/2))*ANGLES(RAD(36+15*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == '3' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+--idle clerp here
+elseif Root.Velocity.Magnitude < 20 then -- walk
+--walk clerp here
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == 'Attack0' then
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(5+0*math.cos(sine/13)),RAD(-37+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-13+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(105+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(101+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-44+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(18+0*math.cos(sine/13)),RAD(-51+0*math.cos(sine/13)),RAD(12+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(-2+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.6+0*math.cos(sine/2),-0.5+0*math.cos(sine/2))*ANGLES(RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Mode == 'Attack1' then
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-13+0*math.cos(sine/13)),RAD(-30+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(101+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(14+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(105+0*math.cos(sine/13)),RAD(-15+0*math.cos(sine/13)),RAD(-15+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),-0.2+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.6+0*math.cos(sine/2),-0.5+0*math.cos(sine/2))*ANGLES(RAD(21+2*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+end
+srv.RenderStepped:Wait()
+end
+end)()
+
+--This was copied from neptunian V
+local muter = false
+local ORGID = 335167645
+local ORVOL = 1.15
+local ORPIT = 1.01
+local kan = Instance.new("Sound",char)
+kan.Volume = 0
+if not NoSound then
+	kan.Volume = 1.15
+end
+kan.TimePosition = 0
+kan.PlaybackSpeed = 1.01
+kan.Pitch = 1.01
+kan.SoundId = "rbxassetid://335167645"
+kan.Name = "Saitama"
+kan.Looped = true
+kan:Play()
+--Created using Nexo Animator
+    end)
+
+	PaidScriptsSection:NewButton("Paid Fe CyberPunk Sniper", "You will need 5063578607 and 4506945409", function()
+        --[[ Hats needed below:
+https://www.roblox.com/catalog/5164293775/Tactical-Cyberpunk-Sniper
+https://www.roblox.com/catalog/6510043121/Blue-Cyberpunk-Hoverboard
+]]--
+local character = game.Players.LocalPlayer.Character
+local mode = 1
+
+
+game:GetService('RunService').Heartbeat:Connect(function()
+    for i,v in pairs(character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.Velocity = Vector3.new(30,0,0)
+            v.CFrame = v.CFrame
+        end
+    end
+end)
+
+game:GetService('RunService').Heartbeat:Connect(function()
+    for i,v in pairs(character.Humanoid:GetAccessories()) do 
+        if not v.Handle:FindFirstChild("AccessoryWeld") then 
+            v.Handle.Velocity = Vector3.new(0,35,0)
+        end
+    end
+end)
+
+sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999999999999)
+ 
+-- // Uses Mizt's bypass \\ --
+ 
+Bypass = "death"
+loadstring(game:GetObjects("rbxassetid://5325226148")[1].Source)()
+
+e = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootPart)
+e.Velocity = Vector3.new(0,-27.5,0)
+e.P = math.huge
+e.MaxForce = Vector3.new(0,3000,0)
+ 
+local playerss = workspace.non
+
+local IsDead = false
+local StateMover = true
+local bbv,bullet
+if Bypass == "death" then
+	bullet = game.Players.LocalPlayer.Character["HumanoidRootPart"]
+	bullet.Transparency = 0.5
+	bullet.Massless = true
+	if bullet:FindFirstChildOfClass("Attachment") then
+		for _,v in pairs(bullet:GetChildren()) do
+			if v:IsA("Attachment") then
+				v:Destroy()
+			end
+		end
+	end
+	bbv = Instance.new("BodyPosition",bullet)
+    bbv.Position = playerss["Right Arm"].CFrame.p
+end
+ 
+if Bypass == "death" then
+coroutine.wrap(function()
+	while true do
+		if not playerss or not playerss:FindFirstChildOfClass("Humanoid") or playerss:FindFirstChildOfClass("Humanoid").Health <= 0 then IsDead = true; return end
+		if StateMover then
+			bbv.Position = playerss["Torso"].CFrame.p
+    		bullet.Position = playerss["Torso"].CFrame.p
+		end
+		game:GetService("RunService").RenderStepped:wait()
+	end
+end)()
+end
+ 
+bbav = Instance.new("BodyAngularVelocity",bullet)
+    bbav.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+    bbav.P = 100000000000000000000000000000
+    bbav.AngularVelocity = Vector3.new(10000000000000000000000000000000,100000000000000000000000000,100000000000000000)
+
+gun = true
+shoot = false
+shoot0 = false
+shooting = false
+
+IT = Instance.new
+CF = CFrame.new
+VT = Vector3.new
+RAD = math.rad
+C3 = Color3.new
+UD2 = UDim2.new
+BRICKC = BrickColor.new
+ANGLES = CFrame.Angles
+EULER = CFrame.fromEulerAnglesXYZ
+COS = math.cos
+ACOS = math.acos
+SIN = math.sin
+ASIN = math.asin
+ABS = math.abs
+MRANDOM = math.random
+FLOOR = math.floor
+
+speed = 1
+sine = 1
+srv = game:GetService('RunService')
+
+reanim = playerss
+hum = reanim.Humanoid
+RJ = reanim.HumanoidRootPart.RootJoint
+RS = reanim.Torso['Right Shoulder']
+LS = reanim.Torso['Left Shoulder']
+RH = reanim.Torso['Right Hip']
+LH = reanim.Torso['Left Hip']
+Root = reanim.HumanoidRootPart
+NECK = reanim.Torso.Neck
+NECK.C0 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+NECK.C1 = CF(0,-0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C1 = CF(-0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C1 = CF(0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+
+m = game.Players.LocalPlayer:GetMouse()
+
+m.Button1Down:Connect(function()
+if gun then
+shooting = true
+gun = false
+shoot = true
+shoot0 = false
+hum.WalkSpeed = 0
+wait(.3)
+StateMover = false
+gun = false
+shoot = false
+shoot0 = true
+wait(.3)
+StateMover = true
+shooting = false
+hum.WalkSpeed = 16
+gun = true
+shoot = false
+shoot0 = false
+end
+
+repeat wait() until shooting == true
+repeat
+game:GetService("RunService").Heartbeat:Wait()
+if m.Target ~= nil then
+bbv.Position = m.Hit.p
+bullet.Position = m.Hit.p
+end
+until shooting == false
+end)
+
+coroutine.wrap(function()
+while true do -- anim changer
+reanim['Sniper'].Handle.AccessoryWeld.C1 = CFrame.new(0,-3.2,1.8) * CFrame.Angles(math.rad(-50),math.rad(0),math.rad(180))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CFrame.new(-.8,0,.4) * CFrame.Angles(math.rad(0),math.rad(-40),math.rad(0))
+if HumanDied then break end
+sine = sine + speed
+if Root.Velocity.y > 1 and gun then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 and gun then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 and gun and mode == 1 then -- idle
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-0+0*math.cos(sine/13)),RAD(14+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+.2*math.cos(sine/15),0+.1*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.3+.2*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13)),RAD(-35+0*math.cos(sine/13))),.4)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+.2*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(59+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-17+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(-15+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(90),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+elseif Root.Velocity.Magnitude < 2 and shoot and mode == 1 then
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+.1*math.cos(sine/15),.2+.05*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-33+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+elseif Root.Velocity.Magnitude < 2 and shoot0 and mode == 1 then
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+.1*math.cos(sine/15),.2+.05*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.4+0*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(111+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-33+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+elseif Root.Velocity.Magnitude < 20 and gun and mode == 1 then -- walk
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-8+1*math.cos(sine/5)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+.1*math.cos(sine/5),0+0*math.cos(sine/13))*ANGLES(RAD(-7+1*math.cos(sine/5)),RAD(0+5*math.cos(sine/6)),RAD(0+0*math.cos(sine/13))),.15)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0+.03*math.cos(sine/20),0+0*math.cos(sine/13))*ANGLES(RAD(94+1*math.cos(sine/15.5)),RAD(12+1*math.cos(sine/18.5)),RAD(-64+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0+.03*math.cos(sine/20),-.5+0*math.cos(sine/13))*ANGLES(RAD(76+1*math.cos(sine/15.5)),RAD(5+1*math.cos(sine/18.5)),RAD(10+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+.2*math.cos(sine/5.5),-.2+-.1*math.cos(sine/6))*ANGLES(RAD(-10+40*math.cos(sine/6)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.15)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/5.5),-.2+.1*math.cos(sine/6))*ANGLES(RAD(-10+-40*math.cos(sine/6)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.15)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+elseif Root.Velocity.Magnitude < 2 and gun and mode == 2 then -- idle
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-0+0*math.cos(sine/13)),RAD(14+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),3+1*math.cos(sine/15),0+.1*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.3+.2*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(149+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.4)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+.2*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(-43+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-17+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(-15+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+elseif Root.Velocity.Magnitude < 2 and shoot and mode == 2 then
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),3+1*math.cos(sine/15),.2+.05*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-33+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+elseif Root.Velocity.Magnitude < 2 and shoot0 and mode == 2 then
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),3+1*math.cos(sine/15),.2+.05*math.cos(sine/13))*ANGLES(RAD(0+2*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),.4+0*math.cos(sine/14.9),-.2+0*math.cos(sine/13))*ANGLES(RAD(111+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+0*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(81+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-1+0*math.cos(sine/13))*ANGLES(RAD(-33+0*math.cos(sine/13)),RAD(-22+0*math.cos(sine/13)),RAD(5+0*math.cos(sine/13))),.2)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.1*math.cos(sine/15),-.35+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.2)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+elseif Root.Velocity.Magnitude < 20 and gun and mode == 2 then -- walk
+playerss.Humanoid.WalkSpeed = 51
+
+elseif Root.Velocity.Magnitude > 20 and gun and mode == 2 then -- run
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Right Arm']
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0.7+0*math.cos(sine/13),-2.7+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-90+0*math.cos(sine/13)),RAD(-128+0*math.cos(sine/13)),RAD(90+0*math.cos(sine/13))),1)
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-8+1*math.cos(sine/5)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.2)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+.1*math.cos(sine/5),0+0*math.cos(sine/13))*ANGLES(RAD(-7+1*math.cos(sine/5)),RAD(0+5*math.cos(sine/6)),RAD(0+0*math.cos(sine/13))),.15)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0+.03*math.cos(sine/20),0+0*math.cos(sine/13))*ANGLES(RAD(94+1*math.cos(sine/15.5)),RAD(12+1*math.cos(sine/18.5)),RAD(-64+0*math.cos(sine/13))),.2)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),.3+.2*math.cos(sine/14.9),0+0*math.cos(sine/13))*ANGLES(RAD(-43+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(59+0*math.cos(sine/13))),.2)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+.2*math.cos(sine/5.5),-.2+-.1*math.cos(sine/6))*ANGLES(RAD(-10+40*math.cos(sine/6)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.15)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-.2*math.cos(sine/5.5),-.2+.1*math.cos(sine/6))*ANGLES(RAD(-10+-40*math.cos(sine/6)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.15)
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+
+elseif Root.Velocity.Magnitude < 2 and gun and mode == 3 then -- idle
+reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['Sniper'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+LH.C0 = LH.C0:Lerp(CF(0+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+
+elseif Root.Velocity.Magnitude < 20 and gun and mode == 3 then  --walk
+    reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['Sniper'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+  
+ reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+LH.C0 = LH.C0:Lerp(CF(0+0*math.cos(sine/13),-90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+
+elseif Root.Velocity.Magnitude < 2 and mode == 4 then --idle
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(-267+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),1+.41*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(-267+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-11+0*math.cos(sine/13)),RAD(-2+0*math.cos(sine/13)),RAD(5+2*math.cos(sine/13))),.1)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(10+0*math.cos(sine/13)),RAD(-2+2.5*math.cos(sine/13))),.1)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-360+0.3*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.1)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+0*math.cos(sine/13),-0.5+0*math.cos(sine/13))*ANGLES(RAD(-8+-4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13))),.1)
+
+   reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['Sniper'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Right Leg']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(-0.7+0*math.cos(sine/13),0+0*math.cos(sine/13),1+0*math.cos(sine/13))*ANGLES(RAD(90+0*math.cos(sine/13)),RAD(183+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.1)
+elseif Root.Velocity.Magnitude < 20 and mode == 4 then -- walk
+
+reanim.Humanoid.WalkSpeed = 51
+
+elseif Root.Velocity.Magnitude > 20 and mode == 4 then -- run
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),1+.41*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(-267+0*math.cos(sine/13)),RAD(-13+0*math.cos(sine/13))),.1)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-11+0*math.cos(sine/13)),RAD(-2+0*math.cos(sine/13)),RAD(5+2*math.cos(sine/13))),.1)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(10+0*math.cos(sine/13)),RAD(-2+2.5*math.cos(sine/13))),.1)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-360+0.3*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.1)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+0*math.cos(sine/13),-0.5+0*math.cos(sine/13))*ANGLES(RAD(-8+-4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13))),.1)
+
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.Part1 = reanim['Right Leg']
+--reanim['MeshPartAccessory'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0 = reanim['MeshPartAccessory'].Handle.AccessoryWeld.C0:Lerp(CF(-0.7+0*math.cos(sine/13),0+0*math.cos(sine/13),1+0*math.cos(sine/13))*ANGLES(RAD(99+0*math.cos(sine/13)),RAD(183+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.1)
+
+   reanim['Sniper'].Handle.AccessoryWeld.Part1 = reanim['Torso']
+--reanim['Sniper'].Handle.AccessoryWeld.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+reanim['Sniper'].Handle.AccessoryWeld.C0 = reanim['Sniper'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),90+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.1)
+
+end
+
+
+
+srv.RenderStepped:Wait()
+end
+end)()
+
+
+
+m.KeyDown:Connect(function(k)
+    
+    if k == "1" then
+    mode = 1
+    
+    if playerss.Humanoid.WalkSpeed == 51 and mode == 1 then
+    playerss.Humanoid.WalkSpeed = 16    
+    
+    end    
+    
+    end
+    
+    if k == "2" then
+    mode = 2
+    end
+    
+    if k == "3" then
+        
+            if playerss.Humanoid.WalkSpeed == 51 and mode == 1 then
+    playerss.Humanoid.WalkSpeed = 16    
+    
+    end
+       mode = 3 
+    end  
+    
+    if k == "4" then
+        mode = 4
+    end    
+end)
+
+--Created using Nexo Animator
+    end)
+
+	PaidScriptsSection:NewButton("Paid Fe Samurai", "You will need 5870508493", function()
+        --[[ Made By 09Ice_Fire09       (!CONVERT!)
+
+
+
+   -                     -
+  	𝓡𝓮𝓭 𝓢𝓪𝓶𝓾𝓻𝓪𝓲
+   -                     -
+   
+   
+   
+Equip  https://www.roblox.com/catalog/5870508493/Red-Cyberpunk-Voltaic-Katana  To Continue:
+
+
+
+Keybinds:
+q = dab
+r = crazy
+f = equip
+f + click = fling
+f + q = fling
+f + e = dash fling
+ctrl = walk (you run in idle)
+
+
+]]-- Made By Ice & Fire#0001       (!CONVERT!)
+
+
+
+
+
+
+
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'),true))()
+    end)
+
+	PaidScriptsSection:NewButton("Paid Fe Knife", "You need 7170680556 and code is Syntaxbesthub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn", true))()
+	end)
+
+	PaidScriptsSection:NewButton("Paid Fe Chunky Boy", "You need 4315489767", function()
+        --[[This is my first script, and its pretty simple. So ye, just don't say its urs
+
+Hats Required: https://www.roblox.com/catalog/4315489767/Demonic-Greatsword (100 robux)
+
+If you know a bit about lua, and want to change the sword you can change it to the swords here: https://cdn.discordapp.com/attachments/729592441266634884/962875377645154304/unknown.png
+]]--
+loadstring(game:HttpGet("https://pastebin.com/raw/tBk7NxXe"))()
+
+--I used nexo animator to made this script :)
+--(V2)
+--hampter#2656
+	end)
+
+	PaidScriptsSection:NewButton("Paid Fe Hat Universe", "Equiped any hats you want", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/4B4fktPS", true))()
+	end)
+
+	PaidScriptsSection:NewButton("Paid Fe Minecraft Cart", "You will need 6242426159", function()
+        --[[ https://www.roblox.com/catalog/6242426159/Minecart
+
+
+
+     𝕄𝕚𝕟𝕖𝕔𝕒𝕣𝕥
+
+  Made By Ice & Fire#0001
+
+
+
+
+Keybinds:
+e = wave
+q = cry
+r = i dont know
+t = clap
+]]--
+
+
+
+
+
+
+
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Minecart'),true))()
+	end)
+
+    --Gamepasses
+	local GamePass = Window:NewTab("Free Gamepasses")
+    local GamePassSection = GamePass:NewSection("Free Gamepasses")
+
+	GamePassSection:NewButton("Double Seat Carpet", "Allows you to fly like the wind", function(v)
+        local args = {
+			[1] = "TwoSeaterRainbowMagicCarpet",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Balloons", "Gives you balloons", function(v)
+        local args = {
+			[1] = "Balloons",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("BeachBall", "Gives you a Beachball", function(v)
+        local args = {
+			[1] = "BeachBall",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Blue Speedster", "Gives you Blue Speedster", function(v)
+        local args = {
+			[1] = "Blue Speedster",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Candy Cane", "Gives you a Candy Cane", function(v)
+        local args = {
+			[1] = "Candy Cane",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("ClassicBloxyCola", "Gives you a ClassicBloxyCola", function(v)
+        local args = {
+			[1] = "ClassicBloxyCola",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cloud", "Gives you a Cloud", function(v)
+        local args = {
+			[1] = "Cloud",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("CoolCar", "Gives you a CoolCar", function(v)
+        local args = {
+			[1] = "CoolCar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cup Empty", "Gives you a Cup Empty", function(v)
+        local args = {
+			[1] = "Cup (Empty)",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Cutlass", "Gives you Cutlass", function(v)
+        local args = {
+			[1] = "Cutlass",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("DiscoHyperbikeWithSideCar", "Gives you a DiscoHyperbike", function(v)
+        local args = {
+			[1] = "DiscoHyperbikeWithSideCar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Donuts", "Gives you Donuts", function(v)
+        local args = {
+			[1] = "Donuts",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("DualGravityCoil", "Gives you DualGravityCoil", function(v)
+        local args = {
+			[1] = "DualGravityCoil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("FidgetSpinner", "Gives you a FidgetSpinner", function(v)
+        local args = {
+			[1] = "FidgetSpinner",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Football", "Gives you a Football", function(v)
+        local args = {
+			[1] = "Football",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Glowdick", "Gives you a Glowdick", function(v)
+        local args = {
+			[1] = "Glowstick",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("GravityCoil", "Gives you a GravityCoil", function(v)
+        local args = {
+			[1] = "GravityCoil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Guitar", "Gives you a Guitar", function(v)
+        local args = {
+			[1] = "Guitar",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("HandlessSegway", "Gives you a HandlessSegway", function(v)
+        local args = {
+			[1] = "HandlessSegway",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Homemade Motorcycle", "Gives you a Homemade Motorcycle", function(v)
+        local args = {
+			[1] = "Homemade Motorcycle",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hotdog", "Gives you a Hotdog", function(v)
+        local args = {
+			[1] = "Hotdog",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hoverboard", "Gives you a Hoverboard", function(v)
+        local args = {
+			[1] = "Hoverboard",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Hyperbike", "Gives you a Hyperbike", function(v)
+        local args = {
+			[1] = "Hyperbike",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("NeonBloxter", "Gives you a NeonBloxter", function(v)
+        local args = {
+			[1] = "NeonBloxter",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Pirate Gun", "Gives you a Pirate Gun", function(v)
+        local args = {
+			[1] = "Pirate Gun",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("RainbowUnicorn", "Gives you a RainbowUnicorn", function(v)
+        local args = {
+			[1] = "RainbowUnicorn",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Rotorcycle", "Gives you a Rotorcycle", function(v)
+        local args = {
+			[1] = "Rotorcycle",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Selfie Stick", "Gives you a Selfie Stick", function(v)
+        local args = {
+			[1] = "Selfie Stick",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Skateboard", "Gives you a Skateboard", function(v)
+        local args = {
+			[1] = "Skateboard",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Skis", "Gives you a Skis", function(v)
+        local args = {
+			[1] = "Skis",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Speed Coil", "Gives you a Speed Coil", function(v)
+        local args = {
+			[1] = "Speed Coil",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("SoccerBall", "Gives you a SoccerBall", function(v)
+        local args = {
+			[1] = "SoccerBall",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("TeddyBloxpin", "Gives you a TeddyBloxpin", function(v)
+        local args = {
+			[1] = "TeddyBloxpin",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Starblox", "Gives you a Starblox", function(v)
+        local args = {
+			[1] = "Starblox",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("Donut", "Gives you a Donut", function(v)
+        local args = {
+			[1] = "Donut",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("CottonCandyBucket", "Gives you a CottonCandyBucket", function(v)
+        local args = {
+			[1] = "CottonCandyBucket",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+	GamePassSection:NewButton("iPhone 7", "Gives you a iPhone 7", function(v)
+        local args = {
+			[1] = "iPhone 7",
+			[2] = 15
+		}
+		
+		workspace.BuyTools:FireServer(unpack(args))
+	end)
+
+    --Player
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+	PlayerSection:NewSlider("JumpPower", "Changes the JumpPower", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+	PlayerSection:NewButton("Click TP", "Hold CTRL click", function(v)
+        local Player = game.Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local UserInputService = game:GetService('UserInputService')
+
+local HoldingControl = false
+
+Mouse.Button1Down:connect(function()
+if HoldingControl then
+Player.Character:MoveTo(Mouse.Hit.p)
+end
+end)
+
+UserInputService.InputBegan:connect(function(Input, Processed)
+if Input.UserInputType == Enum.UserInputType.Keyboard then
+if Input.KeyCode == Enum.KeyCode.LeftControl then
+HoldingControl = true
+elseif Input.KeyCode == Enum.KeyCode.RightControl then
+HoldingControl = true
+end
+end
+end)
+
+UserInputService.InputEnded:connect(function(Input, Processed)
+if Input.UserInputType == Enum.UserInputType.Keyboard then
+if Input.KeyCode == Enum.KeyCode.LeftControl then
+HoldingControl = false
+elseif Input.KeyCode == Enum.KeyCode.RightControl then
+HoldingControl = false
+end
+end
+end)
+    end)
+
+	PlayerSection:NewButton("Fly", "Click e to fly", function(v)
+		repeat wait()
+		until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+	 local mouse = game.Players.LocalPlayer:GetMouse()
+	 repeat wait() until mouse
+	 local plr = game.Players.LocalPlayer
+	 local torso = plr.Character.Torso
+	 local flying = true
+	 local deb = true
+	 local ctrl = {f = 0, b = 0, l = 0, r = 0}
+	 local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+	 local maxspeed = 50
+	 local speed = 0
+	 
+	 function Fly()
+	 local bg = Instance.new("BodyGyro", torso)
+	 bg.P = 9e4
+	 bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+	 bg.cframe = torso.CFrame
+	 local bv = Instance.new("BodyVelocity", torso)
+	 bv.velocity = Vector3.new(0,0.1,0)
+	 bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+	 repeat wait()
+	 plr.Character.Humanoid.PlatformStand = true
+	 if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+	 speed = speed+.5+(speed/maxspeed)
+	 if speed > maxspeed then
+	 speed = maxspeed
+	 end
+	 elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+	 speed = speed-1
+	 if speed < 0 then
+	 speed = 0
+	 end
+	 end
+	 if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+	 bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+	 lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+	 elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+	 bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+	 else
+	 bv.velocity = Vector3.new(0,0.1,0)
+	 end
+	 bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+	 until not flying
+	 ctrl = {f = 0, b = 0, l = 0, r = 0}
+	 lastctrl = {f = 0, b = 0, l = 0, r = 0}
+	 speed = 0
+	 bg:Destroy()
+	 bv:Destroy()
+	 plr.Character.Humanoid.PlatformStand = false
+	 end
+	 mouse.KeyDown:connect(function(key)
+	 if key:lower() == "e" then
+	 if flying then flying = false
+	 else
+	 flying = true
+	 Fly()
+	 end
+	 elseif key:lower() == "w" then
+	 ctrl.f = 1
+	 elseif key:lower() == "s" then
+	 ctrl.b = -1
+	 elseif key:lower() == "a" then
+	 ctrl.l = -1
+	 elseif key:lower() == "d" then
+	 ctrl.r = 1
+	 end
+	 end)
+	 mouse.KeyUp:connect(function(key)
+	 if key:lower() == "w" then
+	 ctrl.f = 0
+	 elseif key:lower() == "s" then
+	 ctrl.b = 0
+	 elseif key:lower() == "a" then
+	 ctrl.l = 0
+	 elseif key:lower() == "d" then
+	 ctrl.r = 0
+	 end
+	 end)
+	 Fly()
+	end)
+
+	PlayerSection:NewButton("Netless V3", "Run a reanimate script", function(v)
+		-- when you reset make sure to re-execute this or just make this execute in a loop
+		for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+			if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+			game:GetService("RunService").Heartbeat:connect(function()
+			v.Velocity = Vector3.new(-30,0,0)
+			end)
+			end
+			end
+			
+			game:GetService("StarterGui"):SetCore("SendNotification", { 
+				Title = "Notification";
+				Text = "Netless Ran";
+				Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+			Duration = 16;
+	end)
+
+	--Credits
+    local Creator = Window:NewTab("Credits")
+    local CreditSection = Creator:NewSection("Credits")
+
+	CreditSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
+
+	CreditSection:NewButton("Gamepass Scripts by S Y N T H#8971","Gave me the gamepass scripts", function(v)
+        
+	end)
+
+elseif game.PlaceId == 1662219031 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "Ocean")
+
+    -- MAIN
+    local MainPage = Window:NewTab("MainPage")
+    local MainThingsSection = MainPage:NewSection("MainPage")
+    
+    MainThingsSection:NewButton("Fates Admin", "best admin so far", function(v)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+    end)
+    
+     MainThingsSection:NewButton("Chat a swastika", "Chats a swastika in chat", function(v)
+        loadstring(game:HttpGet("https://pastebin.com/raw/ahBKsjJ2",true))()
+     end)
+
+     MainThingsSection:NewButton("Chat bypass", "Bypasses the ass chat", function(v)
+        loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+     end)
+
+     MainThingsSection:NewButton("Free clockwork Headphones", "Gives you the premium Headphones for free", function(v)
+        game.ReplicatedStorage.WearItem:FireServer{"Wear" ,"1235488", "Hats"}
+     end)
+
+    MainThingsSection:NewButton("Valk (PERM)", "Gives you the valk", function(v)
+        while true do
+
+			wait(2)
+			
+			Game.ReplicatedStorage.WearItem:FireServer{"Wear", "1365767", "Hats"}
+			
+			end
+    end)
+    
+    MainThingsSection:NewButton("UTG", "Troll with it", function(v)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
+    end)
+    
+    
+    --Player
+    	local Player = Window:NewTab("Player")
+    local PlayerMainSection = Player:NewSection("Player")
+
+    PlayerMainSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+	PlayerMainSection:NewSlider("JumpPower", "Changes the JumpPower", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+	PlayerMainSection:NewButton("Click TP", "Hold CTRL click", function(v)
+        local Player = game.Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local UserInputService = game:GetService('UserInputService')
+
+local HoldingControl = false
+
+Mouse.Button1Down:connect(function()
+if HoldingControl then
+Player.Character:MoveTo(Mouse.Hit.p)
+end
+end)
+
+UserInputService.InputBegan:connect(function(Input, Processed)
+if Input.UserInputType == Enum.UserInputType.Keyboard then
+if Input.KeyCode == Enum.KeyCode.LeftControl then
+HoldingControl = true
+elseif Input.KeyCode == Enum.KeyCode.RightControl then
+HoldingControl = true
+end
+end
+end)
+
+UserInputService.InputEnded:connect(function(Input, Processed)
+if Input.UserInputType == Enum.UserInputType.Keyboard then
+if Input.KeyCode == Enum.KeyCode.LeftControl then
+HoldingControl = false
+elseif Input.KeyCode == Enum.KeyCode.RightControl then
+HoldingControl = false
+end
+end
+end)
+    end)
+	
+	--Credits
+    local Creator = Window:NewTab("Credits")
+    local CreditSection = Creator:NewSection("Credits")
+
+	CreditSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
+	
+elseif game.PlaceId == 155615604 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "GrapeTheme")
+
+    -- MAIN
+    local MainStuff = Window:NewTab("MainStuff")
+    local MainStuffSection = MainStuff:NewSection("MainStuff")
+    
+    MainStuffSection:NewButton("Prison Life Admin", "best admin on prison life", function(v)
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+    end)
+    
+    MainStuffSection:NewButton("Give all guns", "Gives you all the guns", function(v)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+        Workspace.Remote.ItemHandler:InvokeServer(Workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+    end)
+    
+        MainStuffSection:NewButton("TaserBypass", "Stops you from being tased", function(v)
+            coroutine.wrap(function()
+while task.wait() do
+    local handler = getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs
+    for i,v in next, handler do
+        if i == 'isTazed' and handler[i] == true then
+            handler[i] = false
+            local animations = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+            for i,v in next, animations do
+                if v.Animation.AnimationId == 'rbxassetid://279227693' or v.Animation.AnimationId == 'rbxassetid://279229192' then
+                    v:Stop()
+                end
+            end
+            game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+    end
+end
+end)()
+        end)
+        
+        MainStuffSection:NewButton("Super Punch", "Instant Kills by a punch", function(v)
+        mainRemotes = game.ReplicatedStorage
+meleeRemote = mainRemotes['meleeEvent']
+mouse = game.Players.LocalPlayer:GetMouse()
+punching = false
+cooldown = false
+
+function punch()
+cooldown = true
+local part = Instance.new("Part", game.Players.LocalPlayer.Character)
+part.Transparency = 1
+part.Size = Vector3.new(5, 2, 3)
+part.CanCollide = false
+local w1 = Instance.new("Weld", part)
+w1.Part0 = game.Players.LocalPlayer.Character.Torso
+w1.Part1 = part
+w1.C1 = CFrame.new(0,0,2)
+part.Touched:connect(function(hit)
+if game.Players:FindFirstChild(hit.Parent.Name) then
+local plr = game.Players:FindFirstChild(hit.Parent.Name)
+if plr.Name ~= game.Players.LocalPlayer.Name then
+part:Destroy()
+
+for i = 1,100 do
+meleeRemote:FireServer(plr)
+end
+end
+end
+end)
+
+wait(1)
+cooldown = false
+part:Destroy()
+end
+
+
+mouse.KeyDown:connect(function(key)
+if cooldown == false then
+if key:lower() == "f" then
+
+punch()
+
+end
+end
+end)
+        end)
+        
+    MainStuffSection:NewButton("Aimbot", "Best aimbot in the game", function(v)
+        -- // Constants \\ --
+-- [ Services ] --
+local Services = setmetatable({}, {__index = function(Self, Index)
+local NewService = game.GetService(game, Index)
+if NewService then
+Self[Index] = NewService
+end
+return NewService
+end})
+
+-- [ Modules ] --
+local UserInterface = loadstring(game:HttpGet("https://raw.githubusercontent.com/icuck/collection-dump/main/AbstractUI", true))()
+local Drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/iHavoc101/Genesis-Studios/main/Modules/DrawingAPI.lua", true))()
+
+local ToolTip = require(Services.ReplicatedStorage.Modules_client.TooltipModule)
+
+-- [ LocalPlayer ] --
+local LocalPlayer = Services.Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+-- [ Raycast Parameters ] --
+local RaycastParameters = RaycastParams.new()
+RaycastParameters.IgnoreWater = true
+RaycastParameters.FilterType = Enum.RaycastFilterType.Blacklist
+RaycastParameters.FilterDescendantsInstances = {LocalPlayer.Character}
+
+-- // Variables \\ --
+-- [ Info ] --
+local Info = {
+   SilentAIMEnabled = false;
+   TriggeredEnabled = false;
+   ArmsCheckEnabled = true;
+   TeamWhitelist = "";
+   FieldOfView = 250;
+}
+
+local LastArrest = time()
+
+-- [ Interface ] --
+local FOVCircle = Drawing.new("Circle", {
+   Thickness = 2.5,
+   Color = Color3.fromRGB(200, 200, 200),
+   NumSides = 25,
+   Radius = _G.FOV
+})
+
+local Target = Drawing.new("Triangle", {
+   Thickness = 5,
+   Color = Color3.fromRGB(0, 200, 255)
+})
+
+-- [ Weapons ] --
+local Weapons = {
+   "Remington 870";
+   "AK-47";
+   "M9";
+   "M4A1";
+   "Hammer";
+   "Crude Knife";
+}
+
+-- [ Metatable ] --
+local RawMetatable = getrawmetatable(game)
+local __NameCall = RawMetatable.__namecall
+local __Index = RawMetatable.__index
+
+
+-- // Functions \\ --
+local function ValidCharacter(Character)
+   return Character and (Character.FindFirstChildWhichIsA(Character, "Humanoid") and Character.FindFirstChildWhichIsA(Character, "Humanoid").Health ~= 0) or false
+end
+
+local function NotObstructing(Destination, Ancestor)
+   -- [ Camera ] --
+   local ObstructingParts = Camera.GetPartsObscuringTarget(Camera, {Destination}, {Ancestor, LocalPlayer.Character})
+
+   for i,v in ipairs(ObstructingParts) do
+       pcall(function()
+           if v.Transparency >= 1 then
+               table.remove(ObstructingParts, i)
+           end
+       end)
+   end
+
+   if #ObstructingParts <= 0 then
+       return true
+   end
+
+   -- [ Raycast ] --
+   RaycastParameters.FilterDescendantsInstances = {LocalPlayer.Character}
+
+   local Origin = Camera.CFrame.Position
+   local Direction = (Destination - Origin).Unit * 500
+   local RayResult = workspace.Raycast(workspace, Origin, Direction, RaycastParameters) or {
+       Instance = nil;
+       Position = Origin + Direction;
+       Material = Enum.Material.Air;
+   }
+
+   if RayResult.Instance and (RayResult.Instance.IsDescendantOf(RayResult.Instance, Ancestor) or RayResult.Instance == Ancestor) then
+       return true
+   end
+
+   -- [ Obstructed ] --
+   return false
+end
+
+local function IsArmed(Player)
+   for i,v in ipairs(Weapons) do
+       local Tool = Player.Backpack.FindFirstChild(Player.Backpack, v) or Player.Character.FindFirstChild(Player.Character, v)
+       if Tool then
+           return true
+       end
+   end
+   return false
+end
+
+local function ClosestPlayerToCursor(Distance)
+   local Closest = nil
+   local Position = nil
+   local ShortestDistance = Distance or math.huge
+
+   local MousePosition = Services.UserInputService.GetMouseLocation(Services.UserInputService)
+
+   for i, v in ipairs(Services.Players.GetPlayers(Services.Players)) do
+       if v ~= LocalPlayer and (v.Team ~= LocalPlayer.Team and tostring(v.Team) ~= Info.TeamWhitelist) and ValidCharacter(v.Character) then
+           if Info.ArmsCheckEnabled and (v.Team == Services.Teams.Inmates and IsArmed(v) == false) then
+               continue
+           end
+
+           local ViewportPosition, OnScreen = Camera.WorldToViewportPoint(Camera, v.Character.PrimaryPart.Position)
+           local Magnitude = (Vector2.new(ViewportPosition.X, ViewportPosition.Y) - MousePosition).Magnitude
+
+           if OnScreen == false or NotObstructing(v.Character.PrimaryPart.Position, v.Character) == false then
+               continue
+           end
+
+           if Magnitude < ShortestDistance  then
+               Closest = v
+               Position = ViewportPosition
+               ShortestDistance = Magnitude
+           end
+       end
+   end
+
+   return Closest, Position
+end
+
+local function SwitchGuns()
+   if LocalPlayer.Character.FindFirstChild(LocalPlayer.Character, "Remington 870") then
+       local Tool = LocalPlayer.Backpack.FindFirstChild(LocalPlayer.Backpack, "M4A1") or LocalPlayer.Backpack.FindFirstChild(LocalPlayer.Backpack, "AK-47") or LocalPlayer.Backpack.FindFirstChild(LocalPlayer.Backpack, "M9")
+
+       local Humanoid = LocalPlayer.Character.FindFirstChildWhichIsA(LocalPlayer.Character, "Humanoid")
+       Humanoid.EquipTool(Humanoid, Tool)
+   else
+       local Tool = LocalPlayer.Backpack.FindFirstChild(LocalPlayer.Backpack, "Remington 870")
+
+       local Humanoid = LocalPlayer.Character.FindFirstChildWhichIsA(LocalPlayer.Character, "Humanoid")
+       Humanoid.EquipTool(Humanoid, Tool)
+   end
+end
+
+local function Crash(Gun, BulletCount, ShotCount)
+   local ShootEvent = Services.ReplicatedStorage.ShootEvent
+   local StartTime = time()
+   local BulletTable = {}
+
+   for i = 1, BulletCount do
+       BulletTable[i] = {
+           Cframe = CFrame.new(),
+           Distance = math.huge
+       }
+   end
+   for i = 1, ShotCount do
+       ShootEvent:FireServer(BulletTable, Gun)
+       if time() - StartTime > 5 then
+           break
+       end
+   end
+end
+
+-- // User Interface \\ --
+-- [ Window ] --
+local Window = UserInterface.new("Confinement X", UDim2.new(0, 420, 0, 420))
+
+-- [ Assists ] --
+Window:Divider("Assists")
+
+Window:Toggle("Silent Aim", "Shoots toward the nearest player to your cursor.", false, function(State)
+   Info.SilentAIMEnabled = State
+end)
+
+Window:Toggle("Trigger Bot", "Press G to temporarily disable.", false, function(State)
+   Info.TriggeredEnabled = State
+end)
+
+Window:Slider("Field Of View", "Recommended: 250", 50, 500, 250, function(Value)
+   Info.FieldOfView = Value
+end)
+
+Window:Dropdown("Team Whitelist", "Team for Silent-Aim to ignore.", {"Guards", "Inmates", "Criminals"}, function(Value)
+   Info.TeamWhitelist = Value
+end)
+
+Window:Toggle("Danger Check", "Checks if an Inmate has gun.", false, function(State)
+   Info.ArmsCheckEnabled = State
+end)
+
+-- [ Rage ] --
+Window:Divider("Rage")
+
+Window:Button("Kill All", "Kills everyone in-game", function()
+   local GunScript = (LocalPlayer.Backpack:FindFirstChild("GunInterface", true) or LocalPlayer.Character:FindFirstChild("GunInterface", true))
+   if GunScript then
+       for i,v in ipairs(game.Players:GetPlayers()) do
+           if v ~= LocalPlayer then
+               local BulletInfo = {
+                   [1] = {
+                       ["RayObject"] = Ray.new(Vector3.new(845.555908, 101.429337, 2269.43945), Vector3.new(-391.152252, 8.65560055, -83.2166901)),
+                       ["Distance"] = 3.2524313926697,
+                       ["Cframe"] = CFrame.new(840.310791, 101.334137, 2267.87988, 0.0636406094, 0.151434347, -0.986416459, 0, 0.988420188, 0.151741937, 0.997972965, -0.00965694897, 0.0629036576),
+                       ["Hit"] = v.Character.Head
+                   },
+                   [2] = {
+                       ["RayObject"] = Ray.new(Vector3.new(845.555908, 101.429337, 2269.43945), Vector3.new(-392.481476, -8.44939327, -76.7261353)),
+                       ["Distance"] = 3.2699294090271,
+                       ["Cframe"] = CFrame.new(840.290466, 101.184189, 2267.93506, 0.0964837447, 0.0589403138, -0.993587971, 4.65661287e-10, 0.998245299, 0.0592165813, 0.995334625, -0.00571343815, 0.0963144377),
+                       ["Hit"] = v.Character.Head
+                   },
+                   [3] = {
+                       ["RayObject"] = Ray.new(Vector3.new(845.555908, 101.429337, 2269.43945), Vector3.new(-389.21701, -2.50536323, -92.2163162)),
+                       ["Distance"] = 3.1665518283844,
+                       ["Cframe"] = CFrame.new(840.338867, 101.236496, 2267.80371, 0.0166504811, 0.0941716284, -0.995416701, 1.16415322e-10, 0.995554805, 0.0941846818, 0.999861419, -0.00156822044, 0.0165764652),
+                       ["Hit"] = v.Character.Head
+                   },
+                   [4] = {
+                       ["RayObject"] = Ray.new(Vector3.new(845.555908, 101.429337, 2269.43945), Vector3.new(-393.353973, 3.13988972, -72.5452042)),
+                       ["Distance"] = 3.3218522071838,
+                       ["Cframe"] = CFrame.new(840.277222, 101.285957, 2267.9707, 0.117109694, 0.118740402, -0.985994935, -1.86264515e-09, 0.992826641, 0.119563118, 0.993119001, -0.0140019981, 0.116269611),
+                       ["Hit"] = v.Character.Head
+                   },
+                   [5] = {
+                       ["RayObject"] = Ray.new(Vector3.new(845.555908, 101.429337, 2269.43945), Vector3.new(-390.73172, 3.2097764, -85.5477524)),
+                       ["Distance"] = 3.222757101059,
+                       ["Cframe"] = CFrame.new(840.317993, 101.286423, 2267.86035, 0.0517584644, 0.123365127, -0.991010666, 0, 0.992340803, 0.123530701, 0.99865967, -0.00639375951, 0.0513620302),
+                       ["Hit"] = v.Character.Head
+                   }
+               }
+               Services.ReplicatedStorage.ShootEvent:FireServer(BulletInfo, GunScript.Parent)
+               Services.ReplicatedStorage.ShootEvent:FireServer(BulletInfo, GunScript.Parent)
+           end
+       end
+   else
+       ToolTip.update("No gun found!")
+   end
+end)
+
+Window:Button("Gun Modification", "Modifies the current gun you are holding.", function()
+   local GunStates = LocalPlayer.Character:FindFirstChild("GunStates", true)
+   if GunStates then
+       local GunInfo = require(GunStates)
+       GunInfo.ReloadTime = 0
+       GunInfo.FireRate = 0
+       GunInfo.AutoFire = true
+       GunInfo.StoredAmmo = math.huge
+       GunInfo.MaxAmmo = math.huge
+       GunInfo.CurrentAmmo = math.huge
+   end
+end)
+
+-- [ Miscellaneous ] --
+Window:Divider("Miscellaneous")
+
+Window:Button("Get Guns", "Grabs all", function()
+   local HasSWAT = Services.MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, 96651)
+
+   workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+   if HasSWAT then
+       workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+   end
+   workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+   workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+
+   if HasSWAT then
+       workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.clothes["Riot Police"].ITEMPICKUP)
+   end
+end)
+
+-- [ Credits ] --
+Window:Divider("Credits")
+
+Window:Button("OminousVibes#7259", "Script Creator", function()
+   setclipboard("OminousVibes#7259")
+end)
+
+
+-- // Metatable \\ --
+setreadonly(RawMetatable, false)
+
+RawMetatable.__index = newcclosure(function(Self, Index)
+   if Info.SilentAIMEnabled == true and checkcaller() == false then
+       if typeof(Self) == "Instance" and (Self:IsA("PlayerMouse") or Self:IsA("Mouse")) then
+           if Index == "Hit" then
+               local Closest = ClosestPlayerToCursor(Info.FieldOfView)
+               if Closest then
+                   local Velocity = Closest.Character.PrimaryPart.AssemblyLinearVelocity
+                   local Prediction = Velocity.Unit
+                   if Velocity.Magnitude == 0 then
+                       Prediction = Vector3.new(0, 0, 0)
+                   end
+                   return CFrame.new(Closest.Character.Head.Position + Prediction)
+               end
+           end
+       end
+   end
+
+   return __Index(Self, Index)
+end)
+
+
+setreadonly(RawMetatable, true)
+
+-- // Event Listeners \\ --
+Services.RunService.RenderStepped:Connect(function()
+   if Info.SilentAIMEnabled == true then
+       -- FOV --
+       FOVCircle.Visible = true
+       FOVCircle.Radius = Info.FieldOfView
+       FOVCircle.Position = Services.UserInputService:GetMouseLocation()
+
+       -- Target --
+       local Closest, Position = ClosestPlayerToCursor(Info.FieldOfView)
+       if Closest then
+           Target.PointA = Vector2.new(Position.X - 25, Position.Y + 25)
+           Target.PointB = Vector2.new(Position.X + 25, Position.Y + 25)
+           Target.PointC = Vector2.new(Position.X, Position.Y - 25)
+           if Info.TriggeredEnabled and not Services.UserInputService:IsKeyDown(Enum.KeyCode.G) then
+               mouse1click()
+           end
+       end
+       Target.Visible = Closest ~= nil
+   else
+       FOVCircle.Visible = false
+       Target.Visible = false
+   end
+end)
+
+LocalPlayer.Chatted:Connect(function(Message)
+   if string.find(Message:lower(), "-lag") then
+       local GunScript = (LocalPlayer.Backpack:FindFirstChild("GunInterface", true) or LocalPlayer.Character:FindFirstChild("GunInterface", true))
+       if GunScript then
+           ToolTip.update("Lagging...")
+           Crash(GunScript.Parent, 100, 10)
+           ToolTip.update("Lagged!")
+       else
+          ToolTip.update("Error: No gun found!")
+       end
+   end
+end)
+
+local LastShotDetected = time()
+for i,v in ipairs(getconnections(Services.ReplicatedStorage.ReplicateEvent.OnClientEvent)) do
+   local OldFunction = v.Function
+   v.Function = function(BulletStats, IsTaser)
+       if #BulletStats > 25 or time() - LastShotDetected > 0.02 then
+           ToolTip.update("Bullet Overload: Removing...")
+           return
+       end
+       LastShotDetected = time()
+       OldFunction(BulletStats, IsTaser)
+   end
+end
+
+local LastSoundDetected = time()
+for i,v in ipairs(getconnections(Services.ReplicatedStorage.SoundEvent.OnClientEvent)) do
+   local OldFunction = v.Function
+   v.Function = function(Sound)
+       if time() - LastSoundDetected > 0.02 then
+           ToolTip.update("Audio Overload: Removing...")
+           return
+       end
+       LastSoundDetected = time()
+       OldFunction(Sound)
+   end
+end
+
+
+-- // KeyBinds \\ --
+Services.UserInputService.InputBegan:Connect(function(Input, GameProcessed)
+   if _G.ArrestAssist == false or GameProcessed or LocalPlayer.Character:FindFirstChild("Handcuffs") == nil then
+       return
+   end
+
+   local Delta = time() - LastArrest
+   if Delta <= 15 then
+       ToolTip.update("Wait " .. tostring(math.floor(Delta)) .. " seconds before arresting again!")
+   end
+
+   if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+       local Closest = ClosestPlayerToCursor(_G.FOV)
+       if Closest then
+           local Result = workspace.Remote.arrest:InvokeServer(Closest.Character.HumanoidRootPart)
+           ToolTip.update(Result == true and "Successfully arrested!" or Result)
+           if Result == true then
+               LastArrest = time()
+           end
+       end
+   end
+end)
+
+Services.ContextActionService:BindAction("Switch Bind", function(actionName, InputState, inputObject)
+if InputState == Enum.UserInputState.End then
+return
+   end
+   pcall(SwitchGuns)
+end, false, Enum.KeyCode.Q)
+
+-- // Actions \\ --
+LocalPlayer.PlayerGui.Home.fadeFrame.Visible = false
+
+return {};
+    end)
+
+MainStuffSection:NewButton("Lag Server", "Lags the fuck out of the server", function(v)
+        -- Made By Jake11price --
+-- Crash Server --
+local Gun = "Remington 870"
+
+local Player = game.Players.LocalPlayer.Name
+
+game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Gun].ITEMPICKUP)
+
+for i,v in pairs(game.Players[Player].Backpack:GetChildren()) do
+    if v.name == (Gun) then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+
+Gun = game.Players[Player].Character[Gun]
+
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):UnequipTools()
+
+function FireGun(target)
+coroutine.resume(coroutine.create(function()
+local bulletTable = {}
+table.insert(bulletTable, {
+Hit = target,
+Distance = 100,
+Cframe = CFrame.new(0,1,1),
+RayObject = Ray.new(Vector3.new(0.1,0.2), Vector3.new(0.3,0.4))
+})
+game.ReplicatedStorage.ShootEvent:FireServer(bulletTable, Gun)
+wait()
+end))
+end
+
+while game:GetService("RunService").Stepped:wait() do
+for count = 0, 10, 10 do
+FireGun()
+end
+end
+end)
+
+  MainStuffSection:NewButton("Break Sound", "Lags server kinda but ruins audio", function(v)
+     local duration = 50 -- integer only, no decimals
+
+
+
+if game:GetService("SoundService").RespectFilteringEnabled then return end
+
+local sounds = {}
+
+for i,v in pairs(workspace:GetDescendants()) do
+    if v:IsA("Sound") and v.Parent.Name ~= "HumanoidRootPart" then
+        table.insert(sounds,v)
+    end
+end
+
+
+local con = workspace.DescendantAdded:Connect(function(v)
+    if v:IsA("Sound") and v.Parent.Name ~= "HumanoidRootPart" then
+        table.insert(sounds,v)
+    end
+end)
+wait(.1)
+local start = math.floor(tick())
+repeat
+    for i,v in pairs(sounds) do
+        v:Play()
+        v.TimePosition = math.random(0,v.TimeLength * 1000)/1000
+        task.wait()
+    end
+until math.floor(tick()) == start + duration
+con:Disconnect()
+
+for i,v in pairs(sounds) do
+    v:Stop()
+end
+  end)  
+    --player
+     local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+ 
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+ 
+    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+    
+    	--Credits
+    local Creds = Window:NewTab("Credits")
+    local CredSSection = Creds:NewSection("Credits")
+
+	CredSSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
+	
+	elseif game.PlaceId == 621129760 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "BloodTheme")
+
+    -- MAIN
+    local Kat = Window:NewTab("MainThings")
+    local KatStuffSection = Kat:NewSection("MainThings")
+    
+    KatStuffSection:NewButton("Kat Silent aim", "Become the best player ever to live", function(v)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringVbyQoVG4Dx0m", true))()
+    end)
+    
+    KatStuffSection:NewButton("Unnamed ESP", "Watch people sleep", function(v)
+        assert(Drawing, 'exploit not supported')
+
+if not syn and not PROTOSMASHER_LOADED then print'Unnamed ESP only officially supports Synapse and Protosmasher! If you\'re an exploit developer and have added drawing API to your exploit, try setting syn as true then checking if that works, otherwise, DM me on discord @ cppbook.org#1968 or add an issue to the Unnamed ESP Github Repository and I\'ll see it through email!' end
+
+local UserInputService	= game:GetService'UserInputService';
+local HttpService	= game:GetService'HttpService';
+local GUIService	= game:GetService'GuiService';
+local TweenService	= game:GetService'TweenService';
+local RunService	= game:GetService'RunService';
+local Players		= game:GetService'Players';
+local LocalPlayer	= Players.LocalPlayer;
+local Camera		= workspace.CurrentCamera;
+local Mouse		= LocalPlayer:GetMouse();
+local V2New		= Vector2.new;
+local V3New		= Vector3.new;
+local WTVP		= Camera.WorldToViewportPoint;
+local WorldToViewport	= function(...) return WTVP(Camera, ...) end;
+local Menu		= {};
+local MouseHeld		= false;
+local LastRefresh	= 0;
+local OptionsFile	= 'IC3_ESP_SETTINGS.dat';
+local Binding		= false;
+local BindedKey		= nil;
+local OIndex		= 0;
+local LineBox		= {};
+local UIButtons		= {};
+local Sliders		= {};
+local ColorPicker	= { Loading = false; LastGenerated = 0 };
+local Dragging		= false;
+local DraggingUI	= false;
+local Rainbow		= false;
+local DragOffset	= V2New();
+local DraggingWhat	= nil;
+local OldData		= {};
+local IgnoreList	= {};
+local EnemyColor	= Color3.new(1, 0, 0);
+local TeamColor		= Color3.new(0, 1, 0);
+local MenuLoaded	= false;
+local ErrorLogging	= false;
+local TracerPosition	= V2New(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y - 135);
+local DragTracerPosition= false;
+local SubMenu 		= {};
+local IsSynapse 	= syn and not PROTOSMASHER_LOADED;
+local Connections 	= { Active = {} };
+local Signal 		= {}; Signal.__index = Signal;
+local GetCharacter;
+local CurrentColorPicker;
+local Spectating;
+
+local Executor = (identifyexecutor or (function() return '' end))()
+local SupportedExploits = { 'Synapse X', 'ScriptWare', 'Krnl', 'OxygenU', 'Temple' }
+local QUAD_SUPPORTED_EXPLOIT = table.find(SupportedExploits, Executor) ~= nil
+
+-- if not PROTOSMASHER_LOADED then Drawing.UseCompatTransparency = true; end -- For Elysian
+
+shared.MenuDrawingData	= shared.MenuDrawingData or { Instances = {} };
+shared.InstanceData	= shared.InstanceData or {};
+shared.RSName		= shared.RSName or ('UnnamedESP_by_ic3-' .. HttpService:GenerateGUID(false));
+
+local GetDataName	= shared.RSName .. '-GetData';
+local UpdateName	= shared.RSName .. '-Update';
+
+local Debounce		= setmetatable({}, {
+	__index = function(t, i)
+		return rawget(t, i) or false
+	end;
+});
+
+if shared.UESP_InputChangedCon then shared.UESP_InputChangedCon:Disconnect() end
+if shared.UESP_InputBeganCon then shared.UESP_InputBeganCon:Disconnect() end
+if shared.UESP_InputEndedCon then shared.UESP_InputEndedCon:Disconnect() end
+if shared.CurrentColorPicker then shared.CurrentColorPicker:Dispose() end
+
+local RealPrint, LastPrintTick = print, 0;
+local LatestPrints = setmetatable({}, { __index = function(t, i) return rawget(t, i) or 0 end });
+
+local function print(...)
+	local Content = unpack{...};
+	local print = RealPrint;
+
+	if tick() - LatestPrints[Content] > 5 then
+		LatestPrints[Content] = tick();
+		print(Content);
+	end
+end
+
+local function FromHex(HEX)
+	HEX = HEX:gsub('#', '');
+	
+	return Color3.fromRGB(tonumber('0x' .. HEX:sub(1, 2)), tonumber('0x' .. HEX:sub(3, 4)), tonumber('0x' .. HEX:sub(5, 6)));
+end
+
+local function IsStringEmpty(String)
+	if type(String) == 'string' then
+		return String:match'^%s+$' ~= nil or #String == 0 or String == '' or false;
+	end
+	
+	return false;
+end
+
+local function Set(t, i, v)
+	t[i] = v;
+end
+
+local Teams = {};
+local CustomTeams = { -- Games that don't use roblox's team system
+	[2563455047] = {
+		Initialize = function()
+			Teams.Sheriffs = {}; -- prevent big error
+			Teams.Bandits = {}; -- prevent big error
+			local Func = game:GetService'ReplicatedStorage':WaitForChild('RogueFunc', 1);
+			local Event = game:GetService'ReplicatedStorage':WaitForChild('RogueEvent', 1);
+			local S, B = Func:InvokeServer'AllTeamData';
+
+			Teams.Sheriffs = S;
+			Teams.Bandits = B;
+
+			Event.OnClientEvent:Connect(function(id, PlayerName, Team, Remove) -- stolen straight from decompiled src lul
+				if id == 'UpdateTeam' then
+					local TeamTable, NotTeamTable
+					if Team == 'Bandits' then
+						TeamTable = TDM.Bandits
+						NotTeamTable = TDM.Sheriffs
+					else
+						TeamTable = TDM.Sheriffs
+						NotTeamTable = TDM.Bandits
+					end
+					if Remove then
+						TeamTable[PlayerName] = nil
+					else
+						TeamTable[PlayerName] = true
+						NotTeamTable[PlayerName] = nil
+					end
+					if PlayerName == LocalPlayer.Name then
+						TDM.Friendlys = TeamTable
+						TDM.Enemies = NotTeamTable
+					end
+				end
+			end)
+		end;
+		CheckTeam = function(Player)
+			local LocalTeam = Teams.Sheriffs[LocalPlayer.Name] and Teams.Sheriffs or Teams.Bandits;
+			
+			return LocalTeam[Player.Name] and true or false;
+		end;
+	};
+	[5208655184] = {
+		CheckTeam = function(Player)
+			local LocalLastName = LocalPlayer:GetAttribute'LastName' if not LocalLastName or IsStringEmpty(LocalLastName) then return true end
+			local PlayerLastName = Player:GetAttribute'LastName' if not PlayerLastName then return false end
+
+			return PlayerLastName == LocalLastName
+		end
+	};
+	[3541987450] = {
+		CheckTeam = function(Player)
+			local LocalStats = LocalPlayer:FindFirstChild'leaderstats';
+			local LocalLastName = LocalStats and LocalStats:FindFirstChild'LastName'; if not LocalLastName or IsStringEmpty(LocalLastName.Value) then return true; end
+			local PlayerStats = Player:FindFirstChild'leaderstats';
+			local PlayerLastName = PlayerStats and PlayerStats:FindFirstChild'LastName'; if not PlayerLastName then return false; end
+
+			return PlayerLastName.Value == LocalLastName.Value;
+		end;
+	};
+    [6032399813] = {
+		CheckTeam = function(Player)
+			local LocalStats = LocalPlayer:FindFirstChild'leaderstats';
+			local LocalGuildName = LocalStats and LocalStats:FindFirstChild'Guild'; if not LocalGuildName or IsStringEmpty(LocalGuildName.Value) then return true; end
+			local PlayerStats = Player:FindFirstChild'leaderstats';
+			local PlayerGuildName = PlayerStats and PlayerStats:FindFirstChild'Guild'; if not PlayerGuildName then return false; end
+
+			return PlayerGuildName.Value == LocalGuildName.Value;
+		end;
+	};
+    [5735553160] = {
+		CheckTeam = function(Player)
+			local LocalStats = LocalPlayer:FindFirstChild'leaderstats';
+			local LocalGuildName = LocalStats and LocalStats:FindFirstChild'Guild'; if not LocalGuildName or IsStringEmpty(LocalGuildName.Value) then return true; end
+			local PlayerStats = Player:FindFirstChild'leaderstats';
+			local PlayerGuildName = PlayerStats and PlayerStats:FindFirstChild'Guild'; if not PlayerGuildName then return false; end
+
+			return PlayerGuildName.Value == LocalGuildName.Value;
+		end;
+	};
+};
+
+local RenderList = {Instances = {}};
+
+function RenderList:AddOrUpdateInstance(Instance, Obj2Draw, Text, Color)
+	RenderList.Instances[Instance] = { ParentInstance = Instance; Instance = Obj2Draw; Text = Text; Color = Color };
+	return RenderList.Instances[Instance];
+end
+
+local CustomPlayerTag;
+local CustomESP;
+local CustomCharacter;
+local GetHealth;
+local GetAliveState;
+local CustomRootPartName;
+
+local Modules = {
+	[292439477] = {
+		CustomESP = function()
+			if type(shared.PF_Replication) ~= 'table' then
+				local lastScan = shared.pfReplicationScan
+
+				if (tick() - (lastScan or 0)) > 0.01 then
+					shared.pfReplicationScan = tick()
+
+					local gc = getgc(true)
+					for i = 1, #gc do
+						local gcObject = gc[i];
+						if type(gcObject) == 'table' and type(rawget(gcObject, 'getbodyparts')) == 'function' then
+							shared.PF_Replication = gcObject;
+							break
+						end
+					end
+				end
+
+				return
+			end
+
+			for Index, Player in pairs(Players:GetPlayers()) do
+				if Player == LocalPlayer then continue end
+
+				local Body = shared.PF_Replication.getbodyparts(Player);
+
+				if type(Body) == 'table' and typeof(rawget(Body, 'torso')) == 'Instance' then
+					Player.Character = Body.torso.Parent
+					continue
+				end
+
+				Player.Character = nil;
+			end
+		end,
+
+		GetHealth = function(Player)
+			if type(shared.pfHud) ~= 'table' then
+				return false
+			end
+
+			return shared.pfHud:getplayerhealth(Player)
+		end,
+
+		GetAliveState = function(Player)
+			if type(shared.pfHud) ~= 'table' then
+				local lastScan = shared.pfHudScan
+
+				if (tick() - (lastScan or 0)) > 0.1 then
+					shared.pfHudScan = tick()
+
+					local gc = getgc(true)
+					for i = 1, #gc do
+						local gcObject = gc[i];
+						if type(gcObject) == 'table' and type(rawget(gcObject, 'getplayerhealth')) == 'function' then
+							shared.pfHud = gcObject;
+							break
+						end
+					end
+				end
+
+				return
+			end
+
+			return shared.pfHud:isplayeralive(Player)
+		end,
+
+		CustomRootPartName = 'Torso',
+	};
+	[2950983942] = {
+		CustomCharacter = function(Player)
+			if workspace:FindFirstChild'Players' then
+				return workspace.Players:FindFirstChild(Player.Name);
+			end
+		end
+	};
+	[2262441883] = {
+		CustomPlayerTag = function(Player)
+			return Player:FindFirstChild'Job' and (' [' .. Player.Job.Value .. ']') or '';
+		end;
+		CustomESP = function()
+			if workspace:FindFirstChild'MoneyPrinters' then
+				for i, v in pairs(workspace.MoneyPrinters:GetChildren()) do
+					local Main	= v:FindFirstChild'Main';
+					local Owner	= v:FindFirstChild'TrueOwner';
+					local Money	= v:FindFirstChild'Int' and v.Int:FindFirstChild'Money' or nil;
+					if Main and Owner and Money then
+						local O = tostring(Owner.Value);
+						local M = tostring(Money.Value);
+
+						pcall(RenderList.AddOrUpdateInstance, RenderList, v, Main, string.format('Money Printer\nOwned by %s\n[%s]', O, M), Color3.fromRGB(13, 255, 227));
+					end
+				end
+			end
+		end;
+	};
+	-- [4581966615] = {
+	-- 	CustomESP = function()
+	-- 		if workspace:FindFirstChild'Entities' then
+	-- 			for i, v in pairs(workspace.Entities:GetChildren()) do
+	-- 				if not v.Name:match'Printer' then continue end
+
+	-- 				local Properties = v:FindFirstChild'Properties' if not Properties then continue end
+	-- 				local Main	= v:FindFirstChild'hitbox';
+	-- 				local Owner	= Properties:FindFirstChild'Owner';
+	-- 				local Money	= Properties:FindFirstChild'CurrentPrinted'
+					
+	-- 				if Main and Owner and Money then
+	-- 					local O = Owner.Value and tostring(Owner.Value) or 'no one';
+	-- 					local M = tostring(Money.Value);
+
+	-- 					pcall(RenderList.AddOrUpdateInstance, RenderList, v, Main, string.format('Money Printer\nOwned by %s\n[%s]', O, M), Color3.fromRGB(13, 255, 227));
+	-- 				end
+	-- 			end
+	-- 		end
+	-- 	end;
+	-- };
+	[4801598506] = {
+		CustomESP = function()
+			if workspace:FindFirstChild'Mobs' and workspace.Mobs:FindFirstChild'Forest1' then
+				for i, v in pairs(workspace.Mobs.Forest1:GetChildren()) do
+					local Main	= v:FindFirstChild'Head';
+					local Hum	= v:FindFirstChild'Mob';
+
+					if Main and Hum then
+						pcall(RenderList.AddOrUpdateInstance, RenderList, v, Main, string.format('[%s] [%s/%s]', v.Name, Hum.Health, Hum.MaxHealth), Color3.fromRGB(13, 255, 227));
+					end
+				end
+			end
+		end;
+	};
+	[2555873122] = {
+		CustomESP = function()
+			if workspace:FindFirstChild'WoodPlanks' then
+				for i, v in pairs(workspace:GetChildren()) do
+					if v.Name == 'WoodPlanks' then
+						local Main = v:FindFirstChild'Wood';
+
+						if Main then
+							pcall(RenderList.AddOrUpdateInstance, RenderList, v, Main, 'Wood Planks', Color3.fromRGB(13, 255, 227));
+						end
+					end
+				end
+			end
+		end;
+	};
+	[5208655184] = {
+		CustomESP = function()
+			-- if workspace:FindFirstChild'Live' then
+			-- 	for i, v in pairs(workspace.Live:GetChildren()) do
+			-- 		if v.Name:sub(1, 1) == '.' then
+			-- 			local Main = v:FindFirstChild'Head';
+
+			-- 			if Main then
+			-- 				pcall(RenderList.AddOrUpdateInstance, RenderList, v, Main, v.Name:sub(2), Color3.fromRGB(250, 50, 40));
+			-- 			end
+			-- 		end
+			-- 	end
+			-- end
+		end;
+		CustomPlayerTag = function(Player)
+			if game.PlaceVersion < 457 then return '' end
+
+			local Name = '';
+			local FirstName = Player:GetAttribute'FirstName'
+
+			if typeof(FirstName) == 'string' and #FirstName > 0 then
+				local Prefix = '';
+				local Extra = {};
+				Name = Name .. '\n[';
+
+				if Player:GetAttribute'Prestige' > 0 then
+					Name = Name .. '#' .. tostring(Player:GetAttribute'Prestige') .. ' ';
+				end
+				if not IsStringEmpty(Player:GetAttribute'HouseRank') then
+					Prefix = Player:GetAttribute'HouseRank' == 'Owner' and (Player:GetAttribute'Gender' == 'Female' and 'Lady ' or 'Lord ') or '';
+				end
+				if not IsStringEmpty(FirstName) then
+					Name = Name .. '' .. Prefix .. FirstName;
+				end
+				if not IsStringEmpty(Player:GetAttribute'LastName') then
+					Name = Name .. ' ' .. Player:GetAttribute'LastName';
+				end
+
+				if not IsStringEmpty(Name) then Name = Name .. ']'; end
+
+				local Character = GetCharacter(Player);
+
+				if Character then
+					if Character and Character:FindFirstChild'Danger' then table.insert(Extra, 'D'); end
+					if Character:FindFirstChild'ManaAbilities' and Character.ManaAbilities:FindFirstChild'ManaSprint' then table.insert(Extra, 'D1'); end
+
+					if Character:FindFirstChild'Mana'	 		then table.insert(Extra, 'M' .. math.floor(Character.Mana.Value)); end
+					if Character:FindFirstChild'Vampirism' 		then table.insert(Extra, 'V'); end
+					if Character:FindFirstChild'Observe'		then table.insert(Extra, 'ILL'); end
+					if Character:FindFirstChild'Inferi'			then table.insert(Extra, 'NEC'); end
+					if Character:FindFirstChild'World\'s Pulse' then table.insert(Extra, 'DZIN'); end
+					if Character:FindFirstChild'Shift'		 	then table.insert(Extra, 'MAD'); end
+					if Character:FindFirstChild'Head' and Character.Head:FindFirstChild'FacialMarking' then
+						local FM = Character.Head:FindFirstChild'FacialMarking';
+						if FM.Texture == 'http://www.roblox.com/asset/?id=4072968006' then
+							table.insert(Extra, 'HEALER');
+						elseif FM.Texture == 'http://www.roblox.com/asset/?id=4072914434' then
+							table.insert(Extra, 'SEER');
+						elseif FM.Texture == 'http://www.roblox.com/asset/?id=4094417635' then
+							table.insert(Extra, 'JESTER');
+						elseif FM.Texture == 'http://www.roblox.com/asset/?id=4072968656' then
+							table.insert(Extra, 'BLADE');
+						end
+					end
+				end
+				if Player:FindFirstChild'Backpack' then
+					if Player.Backpack:FindFirstChild'Observe' 			then table.insert(Extra, 'ILL');  end
+					if Player.Backpack:FindFirstChild'Inferi'			then table.insert(Extra, 'NEC');  end
+					if Player.Backpack:FindFirstChild'World\'s Pulse' 	then table.insert(Extra, 'DZIN'); end
+					if Player.Backpack:FindFirstChild'Shift'		 	then table.insert(Extra, 'MAD'); end
+				end
+
+				if #Extra > 0 then Name = Name .. ' [' .. table.concat(Extra, '-') .. ']'; end
+			end
+
+			return Name;
+		end;
+	};
+	[3541987450] = {
+		CustomPlayerTag = function(Player)
+			local Name = '';
+
+			if Player:FindFirstChild'leaderstats' then
+				Name = Name .. '\n[';
+				local Prefix = '';
+				local Extra = {};
+				if Player.leaderstats:FindFirstChild'Prestige' and Player.leaderstats.Prestige.ClassName == 'IntValue' and Player.leaderstats.Prestige.Value > 0 then
+					Name = Name .. '#' .. tostring(Player.leaderstats.Prestige.Value) .. ' ';
+				end
+				if Player.leaderstats:FindFirstChild'HouseRank' and Player.leaderstats:FindFirstChild'Gender' and Player.leaderstats.HouseRank.ClassName == 'StringValue' and not IsStringEmpty(Player.leaderstats.HouseRank.Value) then
+					Prefix = Player.leaderstats.HouseRank.Value == 'Owner' and (Player.leaderstats.Gender.Value == 'Female' and 'Lady ' or 'Lord ') or '';
+				end
+				if Player.leaderstats:FindFirstChild'FirstName' and Player.leaderstats.FirstName.ClassName == 'StringValue' and not IsStringEmpty(Player.leaderstats.FirstName.Value) then
+					Name = Name .. '' .. Prefix .. Player.leaderstats.FirstName.Value;
+				end
+				if Player.leaderstats:FindFirstChild'LastName' and Player.leaderstats.LastName.ClassName == 'StringValue' and not IsStringEmpty(Player.leaderstats.LastName.Value) then
+					Name = Name .. ' ' .. Player.leaderstats.LastName.Value;
+				end
+				if Player.leaderstats:FindFirstChild'UberTitle' and Player.leaderstats.UberTitle.ClassName == 'StringValue' and not IsStringEmpty(Player.leaderstats.UberTitle.Value) then
+					Name = Name .. ', ' .. Player.leaderstats.UberTitle.Value;
+				end
+
+				if not IsStringEmpty(Name) then Name = Name .. ']'; end
+
+				local Character = GetCharacter(Player);
+
+				if Character then
+					if Character and Character:FindFirstChild'Danger' then table.insert(Extra, 'D'); end
+					if Character:FindFirstChild'ManaAbilities' and Character.ManaAbilities:FindFirstChild'ManaSprint' then table.insert(Extra, 'D1'); end
+
+					if Character:FindFirstChild'Mana'	 		then table.insert(Extra, 'M' .. math.floor(Character.Mana.Value)); end
+					if Character:FindFirstChild'Vampirism' 		then table.insert(Extra, 'V');    end
+					if Character:FindFirstChild'Observe'			then table.insert(Extra, 'ILL');  end
+					if Character:FindFirstChild'Inferi'			then table.insert(Extra, 'NEC');  end
+					
+					if Character:FindFirstChild'World\'s Pulse' 	then table.insert(Extra, 'DZIN'); end
+					if Character:FindFirstChild'Head' and Character.Head:FindFirstChild'FacialMarking' then
+						local FM = Character.Head:FindFirstChild'FacialMarking';
+						if FM.Texture == 'http://www.roblox.com/asset/?id=4072968006' then
+							table.insert(Extra, 'HEALER');
+						elseif FM.Texture == 'http://www.roblox.com/asset/?id=4072914434' then
+							table.insert(Extra, 'SEER');
+						elseif FM.Texture == 'http://www.roblox.com/asset/?id=4094417635' then
+							table.insert(Extra, 'JESTER');
+						end
+					end
+				end
+				if Player:FindFirstChild'Backpack' then
+					if Player.Backpack:FindFirstChild'Observe' 			then table.insert(Extra, 'ILL');  end
+					if Player.Backpack:FindFirstChild'Inferi'			then table.insert(Extra, 'NEC');  end
+					if Player.Backpack:FindFirstChild'World\'s Pulse' 	then table.insert(Extra, 'DZIN'); end
+				end
+
+				if #Extra > 0 then Name = Name .. ' [' .. table.concat(Extra, '-') .. ']'; end
+			end
+
+			return Name;
+		end;
+	};
+
+	[4691401390] = { -- Vast Realm
+		CustomCharacter = function(Player)
+			if workspace:FindFirstChild'Players' then
+				return workspace.Players:FindFirstChild(Player.Name);
+			end
+		end
+	};
+
+    [6032399813] = { -- Deepwoken [Etrean]
+		CustomPlayerTag = function(Player)
+			local Name = '
