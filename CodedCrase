@@ -17349,4 +17349,141 @@ game.StarterGui:SetCore("SendNotification", {Title = "feFlip", Text = "feFlip lo
 	PersonSection:NewButton("Created by Code#7394","Who its created by", function(v)
         
 	end)
+	
+elseif game.PlaceId == 7952502098 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "BloodTheme")
+
+    -- MAIN
+    local MainTings = Window:NewTab("Main")
+    local MainTingsSection = MainTings:NewSection("Main")
+    
+        MainTingsSection:NewButton("See the correct glass", "Sees the right glass", function(v)
+        GlassPane = game:GetService("Workspace")["Glass Bridge"].GlassPane
+while wait(5) do
+    for i,v in pairs(GlassPane:GetChildren()) do
+       for s,m in pairs(v:GetChildren()) do
+           for n,b in pairs(m:GetChildren()) do
+                if b.Name == "TouchInterest" then
+                    m:Destroy()
+                end
+            end
+        end
+    end
+end
+        end)
+
+MainTingsSection:NewButton("Teleport to end", "Allows you to complete it quicker", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1097.33167, 60.9356651, 113.952003, 0.835382998, -4.32387033e-08, -0.549668252, -1.88917824e-08, 1, -1.07374902e-07, 0.549668252, 1.00083383e-07, 0.835382998)
+end)
+
+    --credits
+    local People = Window:NewTab("Credits")
+    local PeopleSection = People:NewSection("Credits")
+
+	PeopleSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
+elseif game.PlaceId == 147848991 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "Midnight")
+
+    -- MAIN
+    local Mains = Window:NewTab("Main")
+    local MainsSection = Mains:NewSection("Main")
+    
+        MainsSection:NewButton("Hitbox Extender", "Extends hitbox for kunai", function(v)
+            game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Enjoy", Text = "w = Enabled : p = disabled."})
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- Settings
+
+bind = ""
+bind2 = "w"
+bind3 = "p"
+
+-- Script
+
+mouse.KeyDown:connect(function(key)
+if key == bind then
+player.Character.HumanoidRootPart.CFrame = CFrame.new(1254.09656, 137.906067, -172.128204)
+end
+end)
+
+mouse.KeyDown:connect(function(key2)
+if key2 == bind2 then
+_G.HeadSize = 15
+_G.Disabled = true
+
+
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Bright red")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end
+end)
+
+mouse.KeyDown:connect(function(key3)
+if key3 == bind3 then
+_G.HeadSize = 30
+_G.Disabled = true
+
+
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+v.Character.HumanoidRootPart.Transparency = 1
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+v.Character.HumanoidRootPart.Material = "Plastic"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+        end)
+        
+        MainsSection:NewButton("Infinite Yield", "!loopbring to spawn kill", function(v)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+        
+        MainsSection:NewButton("Inf Jump", "Jumps you to space", function(v)
+            local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+        end)
+        
+    --credits
+    local Hey = Window:NewTab("Credits")
+    local HeySection = Hey:NewSection("Credits")
+
+	HeySection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
 end
