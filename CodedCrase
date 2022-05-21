@@ -17519,4 +17519,64 @@ end)
 	HeySection:NewButton("Created by Code#7394","Who its created by", function(v)
         
 	end)
+	
+elseif game.PlaceId == 6677985923 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Holocaust Hub", "Synapse")
+
+    -- MAIN
+    local Man = Window:NewTab("Main")
+    local ManSection = Man:NewSection("Main")
+    
+        ManSection:NewButton("Infinite Money", "Get infinite cash", function(v)
+            money = 9e10
+
+--FrostHook
+local number_1 = money;
+local Target = game:GetService("ReplicatedStorage").RespawnService;
+Target:FireServer(number_1);
+        end)
+        
+        ManSection:NewButton("Infinite Yield", "Allows you to fuck with people", function(v)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+        
+        ManSection:NewButton("Auto Buy", "Auto buys etc", function(v)
+        getgenv().autoBuy = true
+getgenv().autoRebirth = false
+getgenv().autoCollect = true
+getgenv().infMoney = true -- Only works with autoRebirth
+local rStorage = game:GetService("ReplicatedStorage")
+while wait(0.3) do
+   for _,v in pairs(workspace.Tycoons:GetChildren()) do
+       if v.Owner.Value == game.Players.LocalPlayer.Name then
+           if autoRebirth then
+               rStorage.rebirthEvent:FireServer()
+               if infMoney then
+                   rStorage.RespawnService:FireServer(9e16)
+               end
+           end
+           if autoBuy then
+               for a,b in pairs(v.ButtonsFolder:GetChildren()) do
+                   if not b:FindFirstChild("GamePass") then
+                       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b.Head, 0)
+                       firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b.Head, 1)
+                   end
+               end
+           end
+           if autoCollect then
+               firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.StarterParts.Collector.Givers.CashCollector, 0)
+               firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.StarterParts.Collector.Givers.CashCollector, 1)
+           end
+       end
+   end
+end
+end)
+    --player
+    local funnyCredits = Window:NewTab("Credits")
+    local funnyCreditsSection = funnyCredits:NewSection("Credits")
+
+	funnyCreditsSection:NewButton("Created by Code#7394","Who its created by", function(v)
+        
+	end)
 end
