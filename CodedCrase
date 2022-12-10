@@ -4578,4 +4578,137 @@ elseif game.PlaceId == 2788229376 then
 			funnyCreditsSection:NewButton("Created by Cxld#0001","Who its created by", function(v)
 				
 			end)
+        elseif game.PlaceId == 443406476 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Cxld HUB", "Sentinel")
+        
+            -- MAIN
+            local Project = Window:NewTab("Main")
+            local ProjectSection = Project:NewSection("Main")
+            
+                ProjectSection:NewButton("Instant Kill", "Headshots ONLY!!", function(v)
+                    OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+                        local args = {...}
+                        if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
+                          if args[1]["Damage"] > 0 then
+                          args[1]["Damage"] = math.huge
+                       args[1]["BodyPart"] =  args[1]["BodyPart"].Parent.HeadBox
+                      
+                          end
+                      else
+                      end
+                        return OldNamecall(self, unpack(args))
+                      end)
+                end)
+
+                ProjectSection:NewButton("Damage Multiplier", "DOUBLE DAMAGE EZ!!", function(v)
+                    local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("Click here") 
+
+local b = w:CreateFolder("close with ctrl") 
+
+b:Box("dmg multiplier","number",function(value) 
+getgenv().multiplier = value
+if not _G.isRunning then
+_G.isRunning = true
+
+
+spawn(function()
+OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+  local args = {...}
+  if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
+  args[1]["Damage"] = args[1]["Damage"]*multiplier
+end
+  return OldNamecall(self, unpack(args))
+end)
+end)
+
+end
+end)
+
+                end)
+
+                ProjectSection:NewButton("Infinite Ammo", "Inf ammo and bullets", function(v)
+                    local Tables = {}
+
+for i,v in next, getreg() do
+    if typeof(v) == "table" then
+        if v.Ammo then
+            table.insert(Tables, v)
+        end
+    end
+end
+
+local function Upload()
+    for i,v in next, Tables do
+        v.Ammo = 10000
+        v.StoredAmmo = 10000
+        v.MagSize = 10000
+        v.MaxAmmo = 10000
+    end
+end
+
+while wait(15) do
+    Tables = {}
+   
+    for i,v in next, getreg() do
+        if typeof(v) == "table" then
+            if v.Ammo then
+                table.insert(Tables, v)
+            end
+        end
+    end
+   
+    Upload()
+end
+                end)
+
+                ProjectSection:NewButton("Gun MOD", "aim and you get insane fov and you get rapid fire", function(v)
+                    loadstring(game:HttpGet('https://pastebin.com/raw/Z0d9mYji'))()
+                end)
+
+            local Project = Window:NewTab("Misc")
+            local ProjectSection = Project:NewSection("Misc")
+
+            ProjectSection:NewButton("Auto Mystery Box", "press z to enable it, press x to disable it", function(v)
+                local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+                local w = library:CreateWindow("Click here") -- Creates the window
+                
+                local b = w:CreateFolder("Click Once More") -- Creates the folder(U will put here your buttons,etc)
+                
+                b:Bind("On",Enum.KeyCode.Z,function() --Default bind
+                getgenv().Ks = true
+                while Ks == true do
+                   wait()
+                keypress(0x46) -- spacebar
+                wait()
+                keyrelease(0x46)
+                end
+                
+                end)
+                
+                b:Bind("Off",Enum.KeyCode.X,function() --Default bind
+                getgenv().Ks = false
+                end)
+            end)
+
+            ProjectSection:NewButton("Kill all", "You cannot disable it once you click it thats it", function(v)
+                while task.wait() do
+                    game.ReplicatedStorage.UpdateDamageKey:InvokeServer(1);
+                    for i,v in pairs(workspace.Baddies:GetChildren()) do
+                        pcall(function()
+                            v.Humanoid.Damage:FireServer({["Knifed"] = true, ["BodyPart"] = v.HumanoidRootPart, ["Damage"] = 150}, 1)
+                        end)
+                    end
+                 end
+            end)
+
+            local funnyCredits = Window:NewTab("Credits")
+			local funnyCreditsSection = funnyCredits:NewSection("Credits")
+		
+			funnyCreditsSection:NewButton("Created by Cxld#0001","Who its created by", function(v)
+				
+			end)
 end
